@@ -402,7 +402,21 @@ class GraphWalker:
                 best = max(paths, key=lambda p: p.cumulative_weight)
                 file_best_paths[name] = [best]
 
-        ranked = sorted(file_scores.items(), key=lambda kv: kv[1], reverse=True)
+        # ── Concept-density boost ──────────────────────────────────────
+        # Files whose matched concepts are a HIGH fraction of their total
+        # concepts receive a multiplier.  Small utility files where 30 %
+        # of concepts match should not be drowned by large files where
+        # only 15 % match, even when the large file's absolute SUM is
+        # higher.
+        # ─────────────────────────────────────────────────────────────────
+        final_scores: dict[str, float] = {}
+        for fp, raw in file_scores.items():
+            total = self._file_concept_count.get(fp, 1)
+            density = len(file_matched[fp]) / max(1.0, total)
+            final_scores[fp] = raw * (1.0 + 0.4 * density)
+
+        ranked = sorted(final_scores.items(), key=lambda kv: kv[1], reverse=True)
+
         results: list[dict[str, Any]] = []
         for fp, score in ranked[:top_k]:
             funcs = sorted(

@@ -4,8 +4,8 @@
     "n": 91,
     "top_k": 10,
     "file_recall_at_k": "84.6%",
-    "file_mrr": "0.552",
+    "file_mrr": "0.580",
     "function_recall_at_k": "74.7%",
-    "function_mrr": "0.484"
+    "function_mrr": "0.514"
   }
 ]

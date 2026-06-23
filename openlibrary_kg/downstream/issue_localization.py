@@ -115,6 +115,7 @@ class IssueLocalizer:
     def __init__(
         self,
         kg_path: str | Path = "output/phase_6_knowledge_graph.json",
+        kg_query: Any | None = None,                  # pre-built KGQuery (optional)
         synonym_track_b_factor: float = 0.5,
         cooccurrence_decay: float = 0.5,
         top_functions_per_file: int = 5,
@@ -123,9 +124,15 @@ class IssueLocalizer:
         max_hops: int = 3,
         semantic_top_k: int = 50,
     ):
-        # ── Load KG ──────────────────────────────────────────────
-        with open(kg_path, encoding="utf-8") as f:
-            self.kg = json.load(f)
+        # ── Load KG (via platform layer or raw JSON) ─────────────
+        if kg_query is not None:
+            self._kg_query = kg_query
+            self.kg = kg_query._raw
+        else:
+            from openlibrary_kg.kg_query import KGQuery
+            self._kg_query = KGQuery(str(kg_path))
+            self.kg = self._kg_query._raw
+
         self.synonym_track_b_factor = synonym_track_b_factor
         self.cooccurrence_decay = cooccurrence_decay
         self.top_functions_per_file = top_functions_per_file
@@ -220,6 +227,9 @@ class IssueLocalizer:
         if not issue_text.strip():
             return []
 
+        # ── Short-title enrichment: extract key signals from body ──
+        issue_text = self._enrich_short_title(issue_text)
+
         # ── Step 1: Semantic entry — issue → KG concepts ─────────
         try:
             issue_query = self.query_rewriter.rewrite(issue_text)
@@ -270,6 +280,35 @@ class IssueLocalizer:
             entry["explanation"] = explanation
 
         return ranked
+
+    # ==================================================================
+    # Short-title enrichment
+    # ==================================================================
+
+    @staticmethod
+    def _enrich_short_title(issue_text: str, min_title_tokens: int = 5) -> str:
+        """When the issue title carries zero information, replace it with
+        the first substantive sentence from the body.
+
+        Issues like ``## Title:`` have bodies that start with a real
+        summary line (e.g. "Import API rejects differentiable records
+        when other metadata is missing").  Using that as the title gives
+        embedding a concrete query instead of noise.
+        """
+        head, _, tail = issue_text.partition("\n")
+        head_tokens = [t for t in _TOKEN_RE.findall(head.lower()) if len(t) >= 3]
+        if len(head_tokens) >= min_title_tokens:
+            return issue_text
+
+        # Take the first non-empty, non-heading line from body as real title
+        for line in tail.split("\n"):
+            stripped = line.strip()
+            if not stripped or stripped.startswith("#"):
+                continue
+            # This is a real sentence — use it as the title
+            return stripped + "\n\n" + issue_text
+
+        return issue_text
 
     # ==================================================================
     # Fallback: token match (when embedding provider is unavailable)
