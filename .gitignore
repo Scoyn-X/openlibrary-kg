@@ -1,0 +1,26 @@
+# === 敏感文件 ===
+config.yaml
+
+# === 缓存 & 编译产物 ===
+__pycache__/
+*.pyc
+*.pyo
+.llm_cache/
+output/.emb_cache/
+*.egg-info/
+
+# === 日志 ===
+*.log
+
+# === 输出目录 ===
+# output/* 忽略所有生成文件，然后用 ! 仅保留需要发布的 3 个
+output/*
+!output/phase_6_knowledge_graph.json
+!output/compare_summary.json
+!output/swebench_ground_truth.json
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo

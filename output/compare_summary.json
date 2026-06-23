@@ -1,0 +1,11 @@
+[
+  {
+    "method": "KG-walk",
+    "n": 91,
+    "top_k": 10,
+    "file_recall_at_k": "84.6%",
+    "file_mrr": "0.552",
+    "function_recall_at_k": "74.7%",
+    "function_mrr": "0.484"
+  }
+]

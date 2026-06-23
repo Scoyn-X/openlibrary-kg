@@ -1,0 +1,121 @@
+codebase:
+  root: "D:/Secret/Sem4/SE/frontier/Openlibrary/openlibrary"
+  include_patterns: ["openlibrary/**/*.py", "scripts/**/*.py", "*.py"]
+  exclude_patterns:
+    - "**/tests/**"
+    - "**/vendor/**"
+    - "**/mocks/**"
+  python_version: [3, 12]
+
+extraction:
+  min_identifier_length: 2
+  context_lines: 3
+  block_types_to_extract:
+    - function_name
+    - class_name
+    - variable
+    - parameter
+    - attribute
+    - import
+  stop_words:
+    - self
+    - cls
+    - args
+    - kwargs
+    - tmp
+    - temp
+    - item
+    - value
+    - result
+    - data
+    - info
+    - ctx
+    - req
+    - res
+    - obj
+    - ptr
+    - key
+    - val
+    - ret
+    - err
+    - msg
+    - idx
+    - num
+    - cnt
+    - src
+    - dst
+    - buf
+  keep_abbreviations:
+    - ISBN
+    - OLID
+    - OCLC
+    - LCCN
+    - DDC
+    - MARC
+    - IA
+    - OL
+    - URL
+    - API
+    - JSON
+    - HTML
+    - XML
+    - CSV
+    - SQL
+    - HTTP
+
+llm:
+  provider: "openai" # Deepseek uses OpenAI-compatible API
+  model: "deepseek-chat"
+  api_key: ""         # ⚠ 请在此填写你的 Deepseek API Key，或通过环境变量 DEEPSEEK_API_KEY 设置
+  api_key_env: "DEEPSEEK_API_KEY"
+  api_base: "https://api.deepseek.com/v1"
+  temperature: 0.3
+  max_tokens: 300
+  max_retries: 3
+  rate_limit:
+    requests_per_second: 10
+    max_concurrent: 5
+  cache_dir: ".llm_cache"
+
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: ""        # ⚠ 请在此填写你的 Neo4j 密码
+  database: "neo4j"
+  clear_existing: false
+  batch_size: 500
+
+embedding:
+  provider: "sentence-transformers"
+  model: "all-MiniLM-L6-v2"
+  batch_size: 64
+
+relationships:
+  synonyms:
+    naming_variant_threshold: 0.85
+    llm_judge_low: 0.70
+    llm_judge_high: 0.85
+    similarity_threshold: 0.70
+    top_k: 20
+    llm_validation: true
+    llm_batch_size: 20
+  polysemy:
+    min_occurrences_for_polysemy: 5
+    min_files_for_polysemy: 3
+    embedding_distance_threshold: 0.55
+  cooccurrence:
+    min_count: 3
+    normalization: "jaccard"
+    threshold: 0.05
+    use_subdomain_partition: true
+    cross_subdomain_factor: 0.3
+    drop_module_level_context: true
+
+output:
+  directory: "./output"
+  formats: ["json"]
+  pretty_print: true
+
+logging:
+  level: "INFO"
+  file: "kg_construction.log"
