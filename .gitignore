@@ -1,5 +1,6 @@
 # === 敏感文件 ===
 config.yaml
+llm_baseline_config.json
 
 # === 缓存 & 编译产物 ===
 __pycache__/
@@ -18,6 +19,8 @@ output/*
 !output/phase_6_knowledge_graph.json
 !output/compare_summary.json
 !output/swebench_ground_truth.json
+!output/soft_index.json
+!output/llm_baseline_eval.json
 
 # === IDE ===
 .vscode/

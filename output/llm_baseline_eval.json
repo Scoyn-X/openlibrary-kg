@@ -1,0 +1,1980 @@
+{
+  "summary": {
+    "method": "LLM-native (openai/gpt-4o)",
+    "n": 91.0,
+    "top_k": 10.0,
+    "failures": 0.0,
+    "file_recall_at_k": 0.8571428571428571,
+    "file_mrr": 0.6989141810570383
+  },
+  "per_issue": [
+    {
+      "instance_id": "instance_internetarchive__openlibrary-4a5d2a7d24c9e4c11d3069220c0685b736d5ecde-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "## Title: \nIncomplete Retrieval of Property Statement Values in Wikidata Entities.\n\n### Description\n\nWikidata entities c",
+      "gt_files": [
+        "core/wikidata.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/wikidata.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/api.py",
+        "openlibrary/core/schema.py",
+        "openlibrary/core/cache.py",
+        "openlibrary/core/observations.py",
+        "openlibrary/core/processors/readableurls.py",
+        "openlibrary/core/edits.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-dbbd9d539c6d4fd45d5be9662aa19b6d664b5137-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "# ‘/lists/add’ returns 500 error when POST data conflicts with query parameters\n\n# Description:\n\nWhen submitting a form ",
+      "gt_files": [
+        "plugins/openlibrary/lists.py",
+        "plugins/upstream/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/openlibrary/lists.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/core/lists/engine.py",
+        "openlibrary/core/lists/model.py",
+        "openlibrary/actions.py",
+        "openlibrary/utils/form.py",
+        "openlibrary/app.py",
+        "openlibrary/core/middleware.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-111347e9583372e8ef91c82e0612ea437ae3a9c9-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+      "title": "## MARC parsers do not fully process linkage `$6` and alternate script fields\n\n## Problem Description\n\nThe MARC parsers ",
+      "gt_files": [
+        "catalog/marc/get_subjects.py",
+        "catalog/marc/marc_base.py",
+        "catalog/marc/marc_binary.py",
+        "catalog/marc/marc_xml.py",
+        "catalog/marc/parse.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/html.py",
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/catalog/marc/mnemonics.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/utils/query.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-8a5a63af6e0be406aa6c8c9b6d5f28b2f1b6af5a-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "# Host-scoped scheduling for background jobs\n\n## Description\n\nBackground jobs (e.g., metrics collectors) should only run",
+      "gt_files": [
+        "scripts/monitoring/haproxy_monitor.py",
+        "scripts/monitoring/monitor.py",
+        "scripts/monitoring/utils.py"
+      ],
+      "predicted_files": [
+        "scripts/utils/scheduler.py",
+        "openlibrary/core/env.py",
+        "openlibrary/config.py",
+        "openlibrary/app.py",
+        "openlibrary/core/cache.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/utils/request_context.py",
+        "openlibrary/core/middleware.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/stats.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-25858f9f0c165df25742acf8309ce909773f0cdd-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "\"# Enhancement: Refactor Solr Utility Logic to Improve Maintainability\\n\\n## Problem / Opportunity\\n\\nCurrently, Solr-re",
+      "gt_files": [
+        "scripts/solr_builder/solr_builder/index_subjects.py",
+        "solr/update_edition.py",
+        "solr/update_work.py",
+        "solr/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/update_work.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/solr/update_edition.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/updater/edition.py",
+        "scripts/solr_builder/solr_builder/index_subjects.py",
+        "scripts/solr_updater/solr_updater.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-11838fad1028672eb975c79d8984f03348500173-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "\"# Consistent author extraction from MARC 1xx and 7xx fields and reliable linkage of alternate script names via 880\\n\\n#",
+      "gt_files": [
+        "catalog/marc/parse.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/core/models.py",
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/plugins/openlibrary/authors.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-b4f7c185ae5f1824ac7f3a18e8adf6a4b468459c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "#Title: Inconsistent return type of `update_key` in Solr updaters\n\n# Description:\n\nThe methods `update_key` in the Solr ",
+      "gt_files": [
+        "solr/update_work.py",
+        "solr/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/updater/author.py",
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/updater/abstract.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/solr_types.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/utils/solr.py",
+        "scripts/monitoring/solr_updater_monitor.py",
+        "scripts/solr_updater/solr_updater.py"
+      ],
+      "file_rank": 6
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-00bec1e7c8f3272c469a58e1377df03f955ed478-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "## Title:\n\nImport API rejects differentiable records when other metadata is missing\n\n#### Description:\n\nIn the OpenLibra",
+      "gt_files": [
+        "plugins/importapi/code.py",
+        "plugins/importapi/import_validator.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/utils/lccn.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5069b09e5f64428dce59b33455c8bb17fe577070-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "title": "## Booknotes are deleted when updating `work_id` with conflicts\n\n## Describe the bug\n\nWhen calling `Booknotes.update_wor",
+      "gt_files": [
+        "core/booknotes.py",
+        "core/bookshelves.py",
+        "core/db.py",
+        "core/observations.py",
+        "core/ratings.py",
+        "plugins/admin/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/booknotes.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/db.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/actions.py",
+        "openlibrary/core/edits.py",
+        "openlibrary/core/schema.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/core/admin.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5c6c22f3d2edf2f1b10f5dc335e32cb6a5f40341-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "\"# Title\\n\\nInternet Archive metadata imports do not correctly handle publisher and ISBN fields in Open Library records\\",
+      "gt_files": [
+        "plugins/importapi/code.py",
+        "plugins/upstream/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/get_ia.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/helpers.py"
+      ],
+      "file_rank": 8
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-f8cc11d9c1575fdba5ac66aee0befca970da8d64-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "# Open Library Lacks Automated Import Support for Open Textbook Library Content\n\n## Description\n\nOpen Library currently ",
+      "gt_files": [
+        "scripts/import_open_textbook_library.py"
+      ],
+      "predicted_files": [
+        "scripts/import_open_textbook_library.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_opds.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/batch_imports.py",
+        "openlibrary/plugins/importapi/code.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-1351c59fd43689753de1fca32c78d539a116ffc1-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+      "title": "# Inconsistency in author identifier generation when comparing editions.\n\n## Description\nWhen the system compares differ",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/add_book/match.py",
+        "catalog/utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/worksearch/schemes/authors.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/upstream/merge_authors.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-798055d1a19b8fa0983153b709f460be97e33064-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "\"# Bug Report: `map_data` fails with dictionary-based feed entries\\n\\n## Problem\\n\\nThe `map_data` function cannot handl",
+      "gt_files": [
+        "scripts/import_standard_ebooks.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/import_opds.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/processors/invalidation.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/opds.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/core/helpers.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-ba3abfb6af6e722185d3715929ab0f3e5a134eed-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "## Title: Allow Import API to Bypass Validation Checks via `override-validation` Flag ## Description **Label:** Feature ",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/utils/__init__.py",
+        "plugins/importapi/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/api.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/add_book/__init__.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/utils/dateutil.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5de7de19211e71b29b2f2ba3b1dff2fe065d660f-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "# Bug: Edition.from_isbn() does not recognize ASIN and fails identifier validation for edition retrieval\n\n## Description",
+      "gt_files": [
+        "core/models.py",
+        "plugins/books/dynlinks.py",
+        "plugins/openlibrary/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/models.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/fastapi/books.py",
+        "openlibrary/fastapi/search.py",
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/plugins/worksearch/schemes/editions.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-c506c1b0b678892af5cb22c1c1dbc35d96787a0a-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "\"# Title\\n\\nFunction-to-CLI adapter mishandles list inputs and filesystem paths\\n\\n## Description\\n\\nThe `FnToCLI` adapt",
+      "gt_files": [
+        "scripts/open_syllabus_project_parser.py",
+        "scripts/solr_builder/solr_builder/fn_to_cli.py",
+        "scripts/solr_builder/solr_builder/solr_builder.py",
+        "scripts/solr_updater.py",
+        "solr/solr_types.py",
+        "solr/update.py",
+        "solr/updater/work.py",
+        "utils/open_syllabus_project.py"
+      ],
+      "predicted_files": [
+        "scripts/solr_builder/solr_builder/fn_to_cli.py",
+        "scripts/solr_builder/solr_builder/__init__.py",
+        "scripts/solr_builder/solr_builder/solr_builder.py",
+        "scripts/__init__.py",
+        "scripts/utils/scheduler.py",
+        "openlibrary/utils/__init__.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/utils/form.py",
+        "openlibrary/utils/request_context.py",
+        "openlibrary/utils/decorators.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-fad4a40acf5ff5f06cd7441a5c7baf41a7d81fe4-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+      "title": "# Title  \n\nRefactor openlibrary/catalog/get_ia.py to use requests instead of urllib\n\n## Description  \n\nThe current imple",
+      "gt_files": [
+        "catalog/get_ia.py",
+        "catalog/marc/marc_subject.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/get_ia.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-f343c08f89c772f7ba6c0246f384b9e6c3dc0add-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "\"# Title: Author matching fails with different date formats and special characters in names\\n\\n### Description\\nThe auth",
+      "gt_files": [
+        "catalog/add_book/load_book.py",
+        "core/helpers.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/utils/dateutil.py",
+        "openlibrary/plugins/upstream/merge_authors.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/catalog/marc/parse.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-43f9e7e0d56a4f1d487533543c17040a029ac501-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "**Bug Report:** Mismatching of Editions for Wikisource Imports \n\n**Issue Description:** \n\nWhen importing books from Wiki",
+      "gt_files": [
+        "catalog/add_book/__init__.py"
+      ],
+      "predicted_files": [
+        "scripts/providers/import_wikisource.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/edits.py",
+        "openlibrary/plugins/importapi/code.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-6fdbbeee4c0a7e976ff3e46fb1d36f4eb110c428-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "# Add Type Annotations and Clean Up List Model Code\n\n#### Description\n\nNew are type annotations across the `List` model ",
+      "gt_files": [
+        "accounts/model.py",
+        "core/helpers.py",
+        "core/lists/model.py",
+        "core/models.py",
+        "plugins/openlibrary/lists.py",
+        "plugins/upstream/models.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/lists/model.py",
+        "openlibrary/core/lists/engine.py",
+        "openlibrary/plugins/openlibrary/lists.py",
+        "openlibrary/fastapi/lists.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/core/schema.py",
+        "openlibrary/utils/schema.py",
+        "openlibrary/api.py",
+        "openlibrary/core/db.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-7f7e53aa4cf74a4f8549a5bcd4810c527e2f6d7e-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "# Title:\nNormalization of non-MARC language identifiers in `format_languages` is incomplete.\n\n## Description:\n\nSome inpu",
+      "gt_files": [
+        "catalog/utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/utils/__init__.py",
+        "openlibrary/utils/lcc.py",
+        "openlibrary/utils/lccn.py",
+        "openlibrary/utils/form.py",
+        "openlibrary/plugins/worksearch/languages.py",
+        "openlibrary/fastapi/languages.py",
+        "openlibrary/catalog/marc/mnemonics.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/core/formats.py",
+        "openlibrary/core/models.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-6a117fab6c963b74dc1ba907d838e74f76d34a4b-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "**Title:** Search documents omit the Project Runeberg identifier\n\n**Description:**\n\nOpen Library’s work-search output do",
+      "gt_files": [
+        "book_providers.py",
+        "plugins/worksearch/code.py",
+        "plugins/worksearch/schemes/works.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/fulltext.py",
+        "openlibrary/solr/query_utils.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-fdbc0d8f418333c7e575c40b661b582c301ef7ac-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "# Placeholder values are not removed during normalization\n\n# Description\nWhen a record includes specific placeholder lit",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "core/imports.py",
+        "core/models.py",
+        "plugins/importapi/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/processors.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/processors/__init__.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-427f1f4eddfc54735ca451779d4f95bf683d1b0e-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "# Title\nWork search emits over-escaped `edition_key` filters and does not expose raw user queries as parameters.\n\n\n## De",
+      "gt_files": [
+        "plugins/worksearch/schemes/works.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/plugins/worksearch/code.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/utils/solr.py",
+        "openlibrary/plugins/worksearch/schemes/editions.py",
+        "openlibrary/plugins/worksearch/schemes/works.py",
+        "openlibrary/plugins/openlibrary/filters.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/helpers.py"
+      ],
+      "file_rank": 7
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "title": "# Fix source work not reindexed in `Solr` when moving editions.\n\n## Problem \n\nWhen moving an edition from a source work ",
+      "gt_files": [
+        "scripts/new-solr-updater.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/updater/edition.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/edits.py",
+        "openlibrary/plugins/upstream/edits.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/utils/solr.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/catalog/utils/query.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-3f580a5f244c299d936d73d9e327ba873b6401d9-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "\"# Title\\nEnsure constant-like configuration values are immutable where consumed by autocomplete and related logic\\n\\n##",
+      "gt_files": [
+        "core/bookshelves.py",
+        "core/edits.py",
+        "plugins/worksearch/autocomplete.py"
+      ],
+      "predicted_files": [
+        "openlibrary/config.py",
+        "openlibrary/plugins/worksearch/autocomplete.py",
+        "openlibrary/plugins/openlibrary/filters.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/utils/schema.py",
+        "openlibrary/utils/decorators.py",
+        "openlibrary/api.py",
+        "openlibrary/app.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-7bf3238533070f2d24bafbb26eedf675d51941f6-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "Title\n\nAdd Reading-Log Counts to Solr Work Documents\n\nDescription\n\nOpen Library’s Solr index for works is missing engage",
+      "gt_files": [
+        "core/bookshelves.py",
+        "plugins/openlibrary/api.py",
+        "scripts/solr_builder/solr_builder/solr_builder.py",
+        "solr/data_provider.py",
+        "solr/solr_types.py",
+        "solr/update_work.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/solr_types.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/stats.py",
+        "openlibrary/plugins/openlibrary/lists.py",
+        "openlibrary/utils/solr.py",
+        "openlibrary/core/bookshelves.py",
+        "openlibrary/plugins/openlibrary/stats.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-0a90f9f0256e4f933523e9842799e39f95ae29ce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "# ImportAPI does not correctly split `publishers` and `publish_places` when the `publisher` field contains multiple loca",
+      "gt_files": [
+        "plugins/importapi/code.py",
+        "plugins/upstream/utils.py",
+        "utils/isbn.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/get_ia.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/api.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/utils/processors.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-3c48b4bb782189e0858e6c3fc7956046cf3e1cfb-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+      "title": "# Enhance Language Parsing in MARC Records \n\n## Problem \nDuring testing, a strange value was noticed for `245$a` which c",
+      "gt_files": [
+        "catalog/marc/parse.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/marc/__init__.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/code.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-7f6b722a10f822171501d027cad60afe53337732-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "# Title\n\nWork search query processing fails for edge-case inputs after scheme refactor\n\n## Problem Description\n\nFollowin",
+      "gt_files": [
+        "core/bookshelves.py",
+        "plugins/worksearch/code.py",
+        "plugins/worksearch/schemes/__init__.py",
+        "plugins/worksearch/schemes/authors.py",
+        "plugins/worksearch/schemes/subjects.py",
+        "plugins/worksearch/schemes/works.py",
+        "plugins/worksearch/subjects.py",
+        "solr/query_utils.py",
+        "utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/worksearch/schemes/works.py",
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/plugins/worksearch/code.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/utils/solr.py",
+        "openlibrary/plugins/worksearch/schemes/__init__.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/plugins/worksearch/__init__.py",
+        "openlibrary/fastapi/search.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-c05ccf2cd8baa81609434e0e35c4a63bc0da5a25-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "\"# Title: `format_languages` depends on `web.ctx` and fails with case-insensitive or ambiguous inputs. \\n\\n## Descriptio",
+      "gt_files": [
+        "catalog/utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/fastapi/languages.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/core/models.py",
+        "openlibrary/utils/request_context.py",
+        "openlibrary/api.py",
+        "openlibrary/core/formats.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-7edd1ef09d91fe0b435707633c5cc9af41dedddf-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "\"#  Autocomplete endpoints lack unified logic and flexible OLID handling\\n\\n## Description: \\n\\nCurrently, the autocompl",
+      "gt_files": [
+        "plugins/worksearch/autocomplete.py",
+        "utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/worksearch/autocomplete.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/fastapi/search.py",
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/utils/solr.py",
+        "openlibrary/plugins/openlibrary/filters.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-08ac40d050a64e1d2646ece4959af0c42bf6b7b5-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "\"## Title: Expand Support for Author and Contributor Roles in MARC Record Imports\\n\\n## Descriptions\\n\\n**Labels:** Feat",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/marc/parse.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/marc/mnemonics.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/plugins/importapi/code.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-a7b7dc5735a1b3a9824376b1b469b556dd413981-va4315b5dc369c1ef66ae22f9ae4267aa3114e1b3",
+      "title": "# Edition Fields Incorrectly Included in Work-Level Search Queries\n\n## Description\n\nWhen performing work-level searches ",
+      "gt_files": [
+        "plugins/worksearch/schemes/works.py",
+        "solr/query_utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/plugins/worksearch/code.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/plugins/worksearch/schemes/works.py",
+        "openlibrary/plugins/worksearch/schemes/editions.py",
+        "openlibrary/plugins/openlibrary/filters.py",
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/updater/edition.py",
+        "openlibrary/utils/solr.py"
+      ],
+      "file_rank": 3
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-910b08570210509f3bcfebf35c093a48243fe754-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "### Add Google Books as a metadata source to BookWorm for fallback/staging imports\n\n### Problem / Opportunity\n\nBookWorm ",
+      "gt_files": [
+        "core/imports.py",
+        "core/vendors.py",
+        "plugins/importapi/code.py",
+        "scripts/affiliate_server.py",
+        "scripts/promise_batch_imports.py",
+        "views/showmarc.py"
+      ],
+      "predicted_files": [
+        "openlibrary/book_providers.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/api.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/core/vendors.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-de6ae10512f1b5ef585c8341b451bc49c9fd4996-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+      "title": "\"# Low-quality notebook publishers and misleading titles are polluting Open Library’s import pipeline\\n\\n# Description: ",
+      "gt_files": [
+        "scripts/partner_batch_imports.py"
+      ],
+      "predicted_files": [
+        "scripts/partner_batch_imports.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/core/batch_imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/plugins/worksearch/publishers.py",
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/plugins/openlibrary/filters.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-308a35d6999427c02b1dbf5211c033ad3b352556-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "# Title: Refactor: Remove `ListMixin` and consolidate list functionality\n\n## Type of Issue\n\nRefactor\n\n## Component\n\n`ope",
+      "gt_files": [
+        "core/lists/model.py",
+        "core/models.py",
+        "plugins/openlibrary/code.py",
+        "plugins/openlibrary/lists.py",
+        "plugins/upstream/models.py",
+        "plugins/upstream/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/lists/model.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/upstream/models.py",
+        "openlibrary/core/lists/engine.py",
+        "openlibrary/fastapi/lists.py",
+        "openlibrary/plugins/openlibrary/lists.py",
+        "openlibrary/core/lists/__init__.py",
+        "openlibrary/core/db.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/core/schema.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-62d2243131a9c7e6aee00d1e9c5660fd5b594e89-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "\"# Title\\n\\nAggregate author-level ratings and reading-log counts in Solr via JSON Facets\\n\\n# Summary\\n\\nAuthor Solr do",
+      "gt_files": [
+        "core/ratings.py",
+        "solr/updater/author.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/updater/author.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/core/ratings.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/api.py",
+        "scripts/solr_updater/solr_updater.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-77c16d530b4d5c0f33d68bead2c6b329aee9b996-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "### Title: Refactor TOC parsing and rendering logic\n\n**Description:**\n\nThe current handling of tables of contents (TOC) ",
+      "gt_files": [
+        "core/models.py",
+        "plugins/upstream/addbook.py",
+        "plugins/upstream/models.py",
+        "plugins/upstream/table_of_contents.py",
+        "plugins/upstream/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/upstream/table_of_contents.py",
+        "openlibrary/core/olmarkdown.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/formats.py",
+        "openlibrary/plugins/openlibrary/partials.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/plugins/openlibrary/processors.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-6e889f4a733c9f8ce9a9bd2ec6a934413adcedb9-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "\"**Issue Title**: \\n\\nEnhance Language and Page Count Data Extraction for Internet Archive Imports \\n\\n**Problem**: \\n\\n",
+      "gt_files": [
+        "plugins/importapi/code.py",
+        "plugins/upstream/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/catalog/get_ia.py",
+        "openlibrary/core/ia.py",
+        "openlibrary/utils/__init__.py",
+        "openlibrary/utils/languages.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-5fb312632097be7e9ac6ab657964af115224d15d-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "# Title: Missing support for structured retrieval of external profiles from Wikidata entities\n\n## Description\nAuthor pag",
+      "gt_files": [
+        "core/models.py",
+        "core/wikidata.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/wikidata.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/openlibrary/partials.py",
+        "openlibrary/views/__init__.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/fastapi/auth.py",
+        "openlibrary/fastapi/models.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-e1e502986a3b003899a8347ac8a7ff7b08cbfc39-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "\"## Title: Add UI support for editing complex Tables of Contents\\n\\n### Problem / Opportunity\\n\\nUsers editing a book’s ",
+      "gt_files": [
+        "plugins/upstream/table_of_contents.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/upstream/table_of_contents.py",
+        "openlibrary/core/olmarkdown.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/openlibrary/design.py",
+        "openlibrary/plugins/openlibrary/partials.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/edits.py",
+        "openlibrary/views/__init__.py",
+        "openlibrary/app.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-3f7db6bbbcc7c418b3db72d157c6aed1d45b2ccf-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+      "title": "### Title\n\nAdd support for importing metadata from ISBNdb\n\n### Description\n\nOpen Library lacks an importer to transform ",
+      "gt_files": [
+        "core/imports.py",
+        "scripts/providers/isbndb.py"
+      ],
+      "predicted_files": [
+        "scripts/providers/isbndb.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/core/batch_imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/catalog/add_book/match.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-acdddc590d0b3688f8f6386f43709049622a6e19-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+      "title": "# Title: Solr updater fails to reflect subsequent edits due to data inconsistency\n\n## Description\n\nThe Solr updater does",
+      "gt_files": [
+        "solr/data_provider.py",
+        "solr/update_work.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/update_work.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/solr/updater/abstract.py",
+        "openlibrary/solr/updater/author.py",
+        "openlibrary/solr/updater/edition.py",
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/core/edits.py",
+        "scripts/solr_updater/solr_updater.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-1be7de788a444f6255e89c10ef6aa608550604a8-v29f82c9cf21d57b242f8d8b0e541525d259e2d63",
+      "title": "## Inconsistent Edition Matching and Record Expansion\n\n## Problem Description\n\nThe logic used to compare edition records",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/add_book/match.py",
+        "catalog/merge/merge_marc.py",
+        "catalog/utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/models.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/core/edits.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-f3b26c2c0721f8713353fe4b341230332e30008d-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "# Promise item imports allow invalid metadata values to slip through\n\n### Problem\n\nSome books imported through the promi",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "plugins/importapi/import_validator.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "scripts/promise_batch_imports.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/processors/invalidation.py",
+        "openlibrary/core/models.py"
+      ],
+      "file_rank": 4
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-9bdfd29fac883e77dcbc4208cab28c06fd963ab2-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "# Query parser produces incorrect search results due to field binding and alias issues\n\n## Description\n\nThe current quer",
+      "gt_files": [
+        "plugins/worksearch/code.py",
+        "solr/query_utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/utils/lcc.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/plugins/worksearch/code.py",
+        "openlibrary/plugins/openlibrary/filters.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/plugins/worksearch/bulk_search.py",
+        "openlibrary/solr/types_generator.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-322d7a46cdc965bfabbf9500e98fde098c9d95b2-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "## Title: Reorganize `update_work` for easier expansion\n\n#### Labels:\n\nType: Enhancement\n\n#### Issue Description:\n\nThe c",
+      "gt_files": [
+        "scripts/solr_updater.py",
+        "solr/update_work.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/updater/__init__.py",
+        "openlibrary/solr/updater/abstract.py",
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/updater/author.py",
+        "openlibrary/solr/updater/edition.py",
+        "openlibrary/solr/updater/list.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/utils/solr.py",
+        "scripts/solr_updater/solr_updater.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-1894cb48d6e7fb498295a5d3ed0596f6f603b784-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "\"## Title: MARC records incorrectly match “promise-item” ISBN records\\n\\n## Description\\n\\n**Problem**\\n\\nCertain MARC r",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/add_book/match.py",
+        "plugins/upstream/models.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/core/models.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-798a582540019363d14b2090755cc7b89a350788-v430f20c722405e462d9ef44dee7d34c41e76fe7a",
+      "title": "# Consolidate `ListMixin` into `List` to Simplify List Model Structure and Maintenance \n\n## Description\n\nThe `ListMixin`",
+      "gt_files": [
+        "core/lists/model.py",
+        "core/models.py",
+        "plugins/openlibrary/code.py",
+        "plugins/openlibrary/lists.py",
+        "plugins/upstream/models.py",
+        "plugins/upstream/utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/lists/model.py",
+        "openlibrary/core/lists/engine.py",
+        "openlibrary/plugins/openlibrary/lists.py",
+        "openlibrary/fastapi/lists.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/edits.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/core/schema.py",
+        "openlibrary/core/observations.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-d40ec88713dc95ea791b252f92d2f7b75e107440-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "## Title: Add preview option to import endpoints and clarify import validation behavior\n\n## Description\n\n**Labels:** Fea",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/add_book/load_book.py",
+        "plugins/importapi/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/schema.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-53d376b148897466bb86d5accb51912bbbe9a8ed-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "\"# Title: Match authors on alternate\\\\_names/surname with birth/death date\\n\\n### Problem / Opportunity\\n\\nThe current a",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/add_book/load_book.py",
+        "catalog/utils/__init__.py",
+        "mocks/mock_infobase.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/core/models.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/db.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/upstream/merge_authors.py",
+        "openlibrary/solr/updater/author.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/imports.py"
+      ],
+      "file_rank": 9
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-2abe28b472ffed563a87cfe83685b161b35263b0-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "## Amazon imports are missing language metadata from editions\n\n### Problem / Opportunity\n\nWhen importing book data from ",
+      "gt_files": [
+        "core/vendors.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/core/vendors.py",
+        "openlibrary/api.py"
+      ],
+      "file_rank": 9
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-3aeec6afed9198d734b7ee1293f03ca94ff970e1-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "## Title: Incorrect handling of Wikipedia links and statement values in `WikidataEntity`\n\n## Description\n\nThe `WikidataE",
+      "gt_files": [
+        "core/wikidata.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/wikidata.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/utils/__init__.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/plugins/openlibrary/code.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/catalog/add_book/load_book.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-b112069e31e0553b2d374abb5f9c5e05e8f3dbbe-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "\"# Title: Promise item imports need to augment metadata by any ASIN/ISBN-10 when only minimal fields are provided\\n\\n## ",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "core/stats.py",
+        "plugins/importapi/code.py",
+        "plugins/importapi/import_validator.py",
+        "scripts/promise_batch_imports.py"
+      ],
+      "predicted_files": [
+        "scripts/promise_batch_imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/api.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-6afdb09df692223c3a31df65cfa92f15e5614c01-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "## Title: Add support for `Path` and typed lists in `FnToCLI` arguments\n\n### Problem / Opportunity\n\nThe `FnToCLI` utilit",
+      "gt_files": [
+        "scripts/solr_builder/solr_builder/fn_to_cli.py"
+      ],
+      "predicted_files": [
+        "scripts/solr_builder/solr_builder/fn_to_cli.py",
+        "scripts/solr_builder/solr_builder/__init__.py",
+        "scripts/solr_builder/solr_builder/solr_builder.py",
+        "scripts/__init__.py",
+        "scripts/utils/scheduler.py",
+        "openlibrary/utils/__init__.py",
+        "openlibrary/utils/decorators.py",
+        "openlibrary/utils/form.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/utils/request_context.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-b67138b316b1e9c11df8a4a8391fe5cc8e75ff9f-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "# Incomplete and Inconsistent Extraction of Alternate Script (880) Fields and Related MARC Data\n\n### Problem Description",
+      "gt_files": [
+        "catalog/marc/get_subjects.py",
+        "catalog/marc/marc_base.py",
+        "catalog/marc/marc_binary.py",
+        "catalog/marc/marc_xml.py",
+        "catalog/marc/parse.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/catalog/marc/mnemonics.py",
+        "openlibrary/catalog/add_book/match.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-7cbfb812ef0e1f9716e2d6e85d538a96fcb79d13-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+      "title": "# Deterministic ordering of observation values is missing\n\n## Summary\n\nThe observations UI requires a predictable, human",
+      "gt_files": [
+        "core/observations.py",
+        "plugins/openlibrary/api.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/observations.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/core/models.py",
+        "openlibrary/utils/__init__.py",
+        "openlibrary/utils/decorators.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/upstream/utils.py",
+        "openlibrary/api.py",
+        "openlibrary/app.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-7c8dc180281491ccaa1b4b43518506323750d1e4-v298a7a812ceed28c4c18355a091f1b268fe56d86",
+      "title": "##Title\n\nFunction `read_subjects()` in `get_subjects.py` exceeds acceptable complexity thresholds and includes unused lo",
+      "gt_files": [
+        "catalog/marc/get_subjects.py",
+        "catalog/marc/marc_binary.py",
+        "catalog/utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/marc/mnemonics.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/get_ia.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-0d13e6b4bf80bced6c0946b969b9a1b6963f6bce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "## Title: Strip honorifics from imported author names during query building to prevent duplicates\n\n#### Problem / Opport",
+      "gt_files": [
+        "catalog/add_book/load_book.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/plugins/upstream/merge_authors.py",
+        "openlibrary/solr/updater/author.py",
+        "openlibrary/utils/processors.py",
+        "openlibrary/plugins/openlibrary/authors.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-757fcf46c70530739c150c57b37d6375f155dc97-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "### Title **Refactor `build_marc()` into `expand_record()` and relocate to `catalog/utils` for clarity and reuse** ### P",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/add_book/match.py",
+        "catalog/merge/merge_marc.py",
+        "catalog/utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/merge/merge_marc.py",
+        "openlibrary/catalog/utils/__init__.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/catalog/marc/html.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-9cd47f4dc21e273320d9e30d889c864f8cb20ccf-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "## Title: Book import may hang or timeout when processing cover images from unsupported hosts\n\n## Description\n\n**Label:*",
+      "gt_files": [
+        "catalog/add_book/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/api.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/utils/request_context.py",
+        "openlibrary/utils/retry.py",
+        "openlibrary/plugins/upstream/covers.py",
+        "openlibrary/coverstore/utils.py",
+        "openlibrary/config.py",
+        "openlibrary/core/middleware.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-d8162c226a9d576f094dc1830c4c1ffd0be2dd17-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "# Identification of non‑ISBN ASIN codes in import records.\n\n## Description\n\nSome imported items contain Amazon codes (AS",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/utils/__init__.py",
+        "scripts/promise_batch_imports.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/imports.py",
+        "openlibrary/core/batch_imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/utils/isbn.py",
+        "scripts/promise_batch_imports.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/catalog/add_book/match.py"
+      ],
+      "file_rank": 8
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-c4eebe6677acc4629cb541a98d5e91311444f5d4-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "\"# Improve ISBN Import Logic by Using Local Staged Records\\n\\n### Feature Request\\n\\nThe current ISBN resolution process",
+      "gt_files": [
+        "core/imports.py",
+        "core/models.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/batch_imports.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-e390c1212055dd84a262a798e53487e771d3fb64-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "title": "## Title:\n\nIncorrect availability prioritization and metadata for multi-edition IA works in Solr documents\n\n## Descripti",
+      "gt_files": [
+        "solr/update_work.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/updater/work.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/core/ia.py",
+        "openlibrary/core/lending.py",
+        "openlibrary/catalog/get_ia.py",
+        "openlibrary/utils/solr.py",
+        "scripts/solr_builder/solr_builder/solr_builder.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-89e4b4431fe7506c365a6f6eb6f6d048d04c044c-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "# Title:\nKeyError in make_work() when processing documents without author fields\n\n## Description\n\n`make_work()` fails wh",
+      "gt_files": [
+        "plugins/upstream/addbook.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/__init__.py",
+        "openlibrary/core/models.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-58999808a17a26b387f8237860a7a524d1e2d262-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+      "title": "# Title: Add Validation and Date Formatting Functions\n\n## Description:\n\nThe event update workflow for bookshelves check-",
+      "gt_files": [
+        "core/bookshelves_events.py",
+        "plugins/upstream/checkins.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/bookshelves_events.py",
+        "openlibrary/fastapi/checkins.py",
+        "openlibrary/utils/dateutil.py",
+        "openlibrary/core/bookshelves.py",
+        "openlibrary/plugins/openlibrary/events.py",
+        "openlibrary/utils/form.py",
+        "openlibrary/core/models.py",
+        "openlibrary/api.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/plugins/upstream/checkins.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-8a9d9d323dfcf2a5b4f38d70b1108b030b20ebf3-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+      "title": "# Support importing staged ISBNdb data dumps via CLI \n\n# Description: \nThere is currently no mechanism to ingest ISBN me",
+      "gt_files": [
+        "scripts/providers/isbndb.py"
+      ],
+      "predicted_files": [
+        "scripts/manage-imports.py",
+        "scripts/providers/isbndb.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/core/batch_imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/models.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-60725705782832a2cb22e17c49697948a42a9d03-v298a7a812ceed28c4c18355a091f1b268fe56d86",
+      "title": "# Inconsistent handling of Safe Mode preference\n\n## Description\n\nThe `User` model currently lacks a reliable public meth",
+      "gt_files": [
+        "plugins/upstream/account.py",
+        "plugins/upstream/models.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/upstream/models.py",
+        "openlibrary/accounts/model.py",
+        "openlibrary/plugins/upstream/utils.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/upstream/account.py",
+        "openlibrary/core/auth.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/core/db.py",
+        "openlibrary/api.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-bb152d23c004f3d68986877143bb0f83531fe401-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "\"# Inconsistent Handling and Archival of Book Cover Images in Open Library’s Coverstore System\\n\\n## Description\\n\\nThe ",
+      "gt_files": [
+        "coverstore/archive.py",
+        "coverstore/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/coverstore/archive.py",
+        "openlibrary/coverstore/db.py",
+        "openlibrary/coverstore/server.py",
+        "openlibrary/coverstore/utils.py",
+        "openlibrary/coverstore/coverlib.py",
+        "openlibrary/core/db.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/upstream/covers.py",
+        "openlibrary/utils/retry.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-4b7ea2977be2747496ba792a678940baa985f7ea-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "# Author Import System Cannot Utilize External Identifiers for Matching\n\n## Description\n\nThe current Open Library import",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/add_book/load_book.py",
+        "core/models.py",
+        "plugins/importapi/import_edition_builder.py",
+        "plugins/importapi/import_validator.py",
+        "scripts/providers/import_wikisource.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/vendors.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-a48fd6ba9482c527602bc081491d9e8ae6e8226c-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+      "title": "# Remove legacy XML parsing of solr output\n\n## Description\nThis is part of our Solr update. Previously, Solr could only ",
+      "gt_files": [
+        "plugins/worksearch/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/plugins/worksearch/code.py",
+        "openlibrary/plugins/worksearch/__init__.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/utils/solr.py",
+        "openlibrary/plugins/openlibrary/connection.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/api.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-c8996ecc40803b9155935fd7ff3b8e7be6c1437c-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+      "title": "**Title:** Only apply “too-old” publication-year limits to Amazon/BWB sources\n\n**Problem**\n\nA global “too old” check was",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/utils/__init__.py"
+      ],
+      "predicted_files": [
+        "openlibrary/book_providers.py",
+        "openlibrary/core/vendors.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/catalog/get_ia.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/openlibrary/api.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-f0341c0ba81c790241b782f5103ce5c9a6edf8e3-ve8fc82d8aae8463b752a211156c5b7b59f349237",
+      "title": "# Unify validation in add_book by removing override, with the sole exception of 'promise items'\n\n## Description\n\nThe add",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "catalog/utils/__init__.py",
+        "plugins/importapi/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/__init__.py",
+        "openlibrary/plugins/importapi/import_validator.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/upstream/addbook.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/catalog/utils/query.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-d109cc7e6e161170391f98f9a6fa1d02534c18e4-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "## Title: Add ability to annotate individual list seeds with public notes \n\n## Description: \nWhen users create a list in",
+      "gt_files": [
+        "core/lists/model.py",
+        "plugins/openlibrary/lists.py",
+        "plugins/upstream/utils.py",
+        "plugins/worksearch/code.py",
+        "solr/updater/list.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/lists/model.py",
+        "openlibrary/core/lists/engine.py",
+        "openlibrary/plugins/openlibrary/lists.py",
+        "openlibrary/fastapi/lists.py",
+        "openlibrary/core/olmarkdown.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/core/models.py",
+        "openlibrary/api.py",
+        "openlibrary/core/db.py",
+        "openlibrary/core/schema.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-2fe532a33635aab7a9bfea5d977f6a72b280a30c-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "# Amazon imports not using language field \n\n## Problem\nThe Amazon importer doesn't retain the information related to the",
+      "gt_files": [
+        "core/vendors.py",
+        "scripts/affiliate_server.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/code.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/utils/isbn.py",
+        "openlibrary/plugins/upstream/adapter.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/core/models.py",
+        "openlibrary/api.py",
+        "openlibrary/catalog/add_book/match.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-91efee627df01e32007abf2d6ebf73f9d9053076-vbee42ad1b72fb23c6a1c874868a720b370983ed2",
+      "title": "\"# Display reading goal banner between December and February\\n\\n## Description. \\nCurrently, the reading goal banner on ",
+      "gt_files": [
+        "utils/dateutil.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/upstream/mybooks.py",
+        "openlibrary/plugins/upstream/yearly_reading_goals.py",
+        "openlibrary/core/yearly_reading_goals.py",
+        "openlibrary/fastapi/public_my_books.py",
+        "openlibrary/fastapi/yearly_reading_goals.py",
+        "openlibrary/app.py",
+        "openlibrary/api.py",
+        "openlibrary/utils/dateutil.py",
+        "openlibrary/plugins/openlibrary/home.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": 8
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-431442c92887a3aece3f8aa771dd029738a80eb1-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "## Title: Child nodes in Luqum parse trees cannot be replaced.\n\n### Problem:\n\nCurrently, the Luqum utilities provide fun",
+      "gt_files": [
+        "plugins/worksearch/schemes/works.py",
+        "solr/query_utils.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/plugins/worksearch/code.py",
+        "openlibrary/plugins/worksearch/autocomplete.py",
+        "openlibrary/plugins/worksearch/bulk_search.py",
+        "openlibrary/solr/types_generator.py",
+        "openlibrary/solr/solr_types.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/solr/update.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-92db3454aeaa02f89b4cdbc3103f7e95c9759f92-v2c55207218fb8a0138425cbf7d9675272e240b90",
+      "title": "## Title\n\nKeep Solr boolean clause limit aligned with reading-log filter cap\n\n## Problem Description\n\nThe reading-log se",
+      "gt_files": [
+        "core/bookshelves.py",
+        "core/models.py",
+        "core/ratings.py",
+        "plugins/upstream/mybooks.py",
+        "plugins/worksearch/code.py",
+        "utils/solr.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/bookshelves.py",
+        "openlibrary/solr/__init__.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/config.py",
+        "openlibrary/app.py",
+        "openlibrary/core/env.py",
+        "scripts/monitoring/solr_logs_monitor.py",
+        "scripts/monitoring/solr_updater_monitor.py",
+        "openlibrary/utils/solr.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-bdba0af0f6cbaca8b5fc3be2a3080f38156d9c92-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "\"# Title: Update My Books banner so YRG prompts in Dec - Feb only (each year)\\n\\n ### Problem:\\nCurrently, the Yearly Re",
+      "gt_files": [
+        "utils/dateutil.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/upstream/mybooks.py",
+        "openlibrary/core/yearly_reading_goals.py",
+        "openlibrary/fastapi/public_my_books.py",
+        "openlibrary/fastapi/yearly_reading_goals.py",
+        "openlibrary/plugins/upstream/yearly_reading_goals.py",
+        "openlibrary/plugins/openlibrary/home.py",
+        "openlibrary/core/models.py",
+        "openlibrary/app.py",
+        "openlibrary/utils/dateutil.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": 9
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-e010b2a13697de70170033902ba2e27a1e1acbe9-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "## Title \nExpose external identifiers from Project Runeberg in work metadata\n\n## Problem Description \nOpen Library curre",
+      "gt_files": [
+        "book_providers.py",
+        "plugins/worksearch/code.py",
+        "plugins/worksearch/schemes/works.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/models.py",
+        "openlibrary/book_providers.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/fastapi/books.py",
+        "openlibrary/catalog/utils/query.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-e8084193a895d8ee81200f49093389a3887479ce-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "\"# Title: Retain Common Publisher Abbreviation [s.n.] in MARC Records\\n\\n## Description \\nWhen parsing MARC publication ",
+      "gt_files": [
+        "catalog/marc/parse.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/catalog/marc/html.py",
+        "openlibrary/catalog/marc/mnemonics.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/utils/query.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-630221ab686c64e75a2ce253c893c033e4814b2e-v93c53c13d5f9b383ebb411ee7750b49dcd1a34c6",
+      "title": "#Title: Backend support for “Best Book Awards” is missing (validation, APIs, persistence)\n\n## Description\n\nOpen Library ",
+      "gt_files": [
+        "accounts/model.py",
+        "core/bestbook.py",
+        "core/bookshelves.py",
+        "core/models.py",
+        "plugins/openlibrary/api.py"
+      ],
+      "predicted_files": [
+        "openlibrary/core/bestbook.py",
+        "openlibrary/api.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/auth.py",
+        "openlibrary/fastapi/books.py",
+        "openlibrary/fastapi/account.py",
+        "openlibrary/core/db.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/core/schema.py",
+        "openlibrary/core/edits.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-53e02a22972e9253aeded0e1981e6845e1e521fe-vfa6ff903cb27f336e17654595dd900fa943dcd91",
+      "title": "## Title:  \n\nAuthor redirect and update behavior in Solr integration\n\n#### Description:  \n\nWhen interacting with Solr, O",
+      "gt_files": [
+        "plugins/books/readlinks.py",
+        "plugins/worksearch/code.py",
+        "plugins/worksearch/search.py",
+        "solr/update_work.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/updater/author.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/plugins/openlibrary/authors.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/core/edits.py",
+        "openlibrary/api.py"
+      ],
+      "file_rank": null
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-30bc73a1395fba2300087c7f307e54bb5372b60a-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+      "title": "\"## Title: Improve cover archival and delivery by adding zip-based batch processing and proper redirects for high cover ",
+      "gt_files": [
+        "coverstore/archive.py",
+        "coverstore/code.py"
+      ],
+      "predicted_files": [
+        "openlibrary/coverstore/archive.py",
+        "openlibrary/coverstore/server.py",
+        "openlibrary/coverstore/utils.py",
+        "openlibrary/coverstore/coverlib.py",
+        "openlibrary/core/db.py",
+        "openlibrary/core/models.py",
+        "openlibrary/api.py",
+        "openlibrary/utils/compress.py",
+        "openlibrary/config.py",
+        "openlibrary/coverstore/schema.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-0dc5b20fa186f9714f8a838178597e69f549d026-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+      "title": "\"# Title: Import alternate-script author names\\n\\n## Describe the problem\\n\\nThe current MARC parsing only extracts name",
+      "gt_files": [
+        "catalog/marc/parse.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/marc/__init__.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/utils/query.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/plugins/importapi/import_validator.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-72321288ea790a3ace9e36f1c05b68c93f7eec43-v0f5aece3601a5b4419f7ccec1dbda2071be28ee4",
+      "title": "## Title: Normalize `work.`-prefixed fields in search queries\n\n### Problem / Opportunity\n\nSearch queries using `work.`-p",
+      "gt_files": [
+        "plugins/worksearch/schemes/works.py",
+        "solr/query_utils.py",
+        "solr/updater/edition.py",
+        "solr/updater/work.py"
+      ],
+      "predicted_files": [
+        "openlibrary/solr/query_utils.py",
+        "openlibrary/solr/utils.py",
+        "openlibrary/solr/__init__.py",
+        "openlibrary/solr/data_provider.py",
+        "openlibrary/solr/solr_types.py",
+        "openlibrary/solr/types_generator.py",
+        "openlibrary/solr/update.py",
+        "openlibrary/solr/updater/__init__.py",
+        "openlibrary/plugins/worksearch/search.py",
+        "openlibrary/utils/solr.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+      "title": "### Title: Preserve complex TOC metadata and enforce exact markdown formatting\n\n### Description\n\nThe internal representa",
+      "gt_files": [
+        "plugins/upstream/table_of_contents.py"
+      ],
+      "predicted_files": [
+        "openlibrary/plugins/upstream/table_of_contents.py",
+        "openlibrary/core/olmarkdown.py",
+        "openlibrary/core/models.py",
+        "openlibrary/core/formats.py",
+        "openlibrary/plugins/openlibrary/utils.py",
+        "openlibrary/plugins/openlibrary/schema.py",
+        "openlibrary/api.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/core/edits.py",
+        "openlibrary/plugins/openlibrary/processors.py"
+      ],
+      "file_rank": 1
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-123e6e5e1c85b9c07d1e98f70bfc480bc8016890-v2733ff199fb72f0d033a30dc62cb0a4742e3a7f4",
+      "title": "# PrioritizedISBN Class Limited to ISBN Values and Lacks Proper Equality/Serialization\n\n## Description\n\nThe current Prio",
+      "gt_files": [
+        "core/vendors.py",
+        "scripts/affiliate_server.py"
+      ],
+      "predicted_files": [
+        "openlibrary/utils/isbn.py",
+        "scripts/affiliate_server.py",
+        "openlibrary/core/models.py",
+        "openlibrary/api.py",
+        "openlibrary/core/vendors.py",
+        "openlibrary/plugins/openlibrary/api.py",
+        "openlibrary/core/helpers.py",
+        "openlibrary/utils/schema.py",
+        "openlibrary/core/schema.py",
+        "openlibrary/core/formats.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-9c392b60e2c6fa1d68cb68084b4b4ff04d0cb35c-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+      "title": "## Title: Lack of Type Annotations in `DataField` Parsing Functions Reduces Code Clarity and Tooling Support \n\n## Descri",
+      "gt_files": [
+        "catalog/marc/marc_base.py",
+        "catalog/marc/marc_binary.py",
+        "catalog/marc/marc_xml.py"
+      ],
+      "predicted_files": [
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/get_subjects.py",
+        "openlibrary/catalog/marc/html.py",
+        "openlibrary/catalog/marc/mnemonics.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/catalog/add_book/match.py",
+        "openlibrary/catalog/get_ia.py"
+      ],
+      "file_rank": 2
+    },
+    {
+      "instance_id": "instance_internetarchive__openlibrary-c12943be1db80cf1114bc267ddf4f9933aca9b28-v2c55207218fb8a0138425cbf7d9675272e240b90",
+      "title": "\"## Title: Normalize Library of Congress Control Numbers (LCCNs)\\n\\n## Problem\\n\\nOpenLibrary’s handling of Library of C",
+      "gt_files": [
+        "catalog/add_book/__init__.py",
+        "plugins/upstream/models.py",
+        "utils/lccn.py"
+      ],
+      "predicted_files": [
+        "openlibrary/utils/lccn.py",
+        "openlibrary/catalog/add_book/load_book.py",
+        "openlibrary/core/models.py",
+        "openlibrary/plugins/importapi/import_edition_builder.py",
+        "openlibrary/catalog/marc/parse.py",
+        "openlibrary/catalog/marc/marc_base.py",
+        "openlibrary/catalog/marc/marc_binary.py",
+        "openlibrary/catalog/marc/marc_xml.py",
+        "openlibrary/core/imports.py",
+        "openlibrary/plugins/openlibrary/utils.py"
+      ],
+      "file_rank": 1
+    }
+  ]
+}

@@ -24,7 +24,7 @@ from typing import Any
 from openlibrary_kg.config import Config, load_config
 from openlibrary_kg.extraction.ast_parser import parse_file
 from openlibrary_kg.extraction.file_discovery import discover_python_files
-from openlibrary_kg.extraction.name_splitter import split_name_filter_nouns
+from openlibrary_kg.extraction.name_splitter import split_name_filter_nouns, split_identifier
 from openlibrary_kg.extraction.noun_filter import filter_by_coverage
 from openlibrary_kg.utils.io import write_json
 from openlibrary_kg.utils.logging import setup_logging
@@ -58,6 +58,10 @@ def run_phase_1(config: Config) -> dict[str, Any]:
     occ_count = 0
 
     # Pass 1: AST + per-token hard blocklist
+    # Also build a soft-index: tokens blocked from the KG but still useful
+    # as lightweight file-level signals (e.g. "requests", "urllib").
+    soft_index: dict[str, set[str]] = defaultdict(set)
+
     for fpath in files:
         occurrences = parse_file(fpath, context_lines=context_lines)
         if not occurrences:
@@ -65,9 +69,18 @@ def run_phase_1(config: Config) -> dict[str, Any]:
         file_count += 1
 
         for occ in occurrences:
-            # Drop `import` identifiers entirely — they're rarely domain concepts
-            # and they let stdlib module names sneak in as "concepts".
+            # `import` identifiers don't enter the concept graph, but their
+            # tokens ARE valuable as soft-index signals.  E.g. an issue
+            # "refactor to use requests" should match files with `import requests`.
             if occ.identifier_type == "import":
+                raw_tokens = split_identifier(occ.raw_identifier)
+                for t in raw_tokens:
+                    if len(t) >= min_len:
+                        soft_index[t.lower()].add(fpath.as_posix())
+                # Also record full raw identifier
+                raw_lower = occ.raw_identifier.lower()
+                if len(raw_lower) >= min_len:
+                    soft_index[raw_lower].add(fpath.as_posix())
                 continue
 
             split_name = split_name_filter_nouns(
@@ -76,8 +89,37 @@ def run_phase_1(config: Config) -> dict[str, Any]:
                 keep_abbreviations=keep_abbr,
                 min_length=min_len,
             )
+
+            # ---- soft-index: capture blocked tokens as lightweight signals ----
+            # When ALL tokens in an identifier are blocked, the identifier
+            # carries zero domain-concept value, but its tokens may still be
+            # useful for issue localization.  For example "requests" (HTTP
+            # library) is blocked because it's a stdlib module, but an issue
+            # saying "refactor to use requests" should still match the files
+            # where `import requests` appears.
+            # ---- soft-index: capture partial matches ──────────────────
+            # Even when split_name is non-empty, some tokens may have been
+            # blocked.  Record the FULL raw identifier so compound names
+            # like `read_subjects` (→ "subjects" only) remain searchable.
+            # Also record individual blocked tokens.
+            # ───────────────────────────────────────────────────────────
+            raw_tokens = split_identifier(occ.raw_identifier)
+            raw_lower = occ.raw_identifier.lower()
+            has_blocked_token = False
+            for t in raw_tokens:
+                if t.lower() in effective_stop_words:
+                    has_blocked_token = True
+                    if len(t) >= min_len:
+                        soft_index[t.lower()].add(fpath.as_posix())
+            # Record raw identifier if any token was blocked AND the full
+            # name is not already a KG concept name
+            if has_blocked_token and len(raw_lower) >= min_len:
+                soft_index[raw_lower].add(fpath.as_posix())
+            # ───────────────────────────────────────────────────────────
+
             if not split_name:
                 continue
+
             occ.split_name = split_name
             occ_dict = occ.model_dump()
             all_occurrences.append(occ_dict)
@@ -116,6 +158,11 @@ def run_phase_1(config: Config) -> dict[str, Any]:
         final_count, occ_count - final_count,
     )
 
+    # Convert soft_index sets to sorted lists for JSON serialization
+    soft_index_serializable: dict[str, list[str]] = {}
+    for token, file_set in sorted(soft_index.items()):
+        soft_index_serializable[token] = sorted(file_set)
+
     return {
         "phase": "phase_1_concepts",
         "metadata": {
@@ -125,8 +172,10 @@ def run_phase_1(config: Config) -> dict[str, Any]:
             "total_occurrences_pre_coverage": occ_count,
             "total_occurrences": final_count,
             "concepts_dropped_by_coverage": sorted(over_covered),
+            "soft_index_tokens": len(soft_index_serializable),
         },
         "occurrences": filtered_occurrences,
+        "soft_index": soft_index_serializable,
     }
 
 
@@ -145,6 +194,13 @@ def main() -> None:
     out_path = output_dir / "phase_1_concepts.json"
     write_json(out_path, data, pretty=config.output.pretty_print)
     print(f"Written {len(data['occurrences'])} occurrences to {out_path}")
+
+    # Also save soft_index as a standalone file for downstream consumers
+    si_path = output_dir / "soft_index.json"
+    import json
+    with open(si_path, "w", encoding="utf-8") as f:
+        json.dump(data["soft_index"], f, ensure_ascii=False)
+    print(f"Written soft_index ({len(data['soft_index'])} tokens) to {si_path}")
 
 
 if __name__ == "__main__":

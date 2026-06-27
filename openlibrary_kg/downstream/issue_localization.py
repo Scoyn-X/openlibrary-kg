@@ -116,6 +116,7 @@ class IssueLocalizer:
         self,
         kg_path: str | Path = "output/phase_6_knowledge_graph.json",
         kg_query: Any | None = None,                  # pre-built KGQuery (optional)
+        soft_index_path: str | None = "output/soft_index.json",
         synonym_track_b_factor: float = 0.5,
         cooccurrence_decay: float = 0.5,
         top_functions_per_file: int = 5,
@@ -165,6 +166,23 @@ class IssueLocalizer:
             self.concept_idf[name] = math.log(
                 1 + total_files / max(1, len(files))
             )
+
+        # ── Load soft-index (blocked tokens → file signal) ───────
+        self._soft_index: dict[str, list[str]] = {}
+        self._soft_idf: dict[str, float] = {}
+        self._soft_files_total = total_files
+        if soft_index_path:
+            si_path = Path(soft_index_path)
+            if si_path.exists():
+                self._soft_index = json.loads(si_path.read_text(encoding="utf-8"))
+                for token, files in self._soft_index.items():
+                    self._soft_idf[token] = math.log(
+                        1.0 + total_files / max(1, len(files))
+                    )
+                logger.info(
+                    "IssueLocalizer: loaded soft_index with %d tokens",
+                    len(self._soft_index),
+                )
 
         # ── Semantic entry module ─────────────────────────────────
         from openlibrary_kg.downstream.query_rewriter import QueryRewriter
@@ -238,8 +256,9 @@ class IssueLocalizer:
             issue_query = self._fallback_seed_concepts(issue_text)
 
         if not issue_query.matches:
+            # No KG concept matched — fall back to soft-index-only ranking
             logger.debug("No concepts matched for issue: %s", title[:80])
-            return []
+            return self._soft_index_only_ranking(issue_text, top_k)
 
         # ── Step 2: Multi-hop graph walk ─────────────────────────
         seed_weights = {m.concept_name: m.weight for m in issue_query.matches}
@@ -263,6 +282,12 @@ class IssueLocalizer:
             top_k=top_k,
         )
 
+        # ── Step 3.5: Soft-index boost ────────────────────────────
+        if self._soft_index:
+            ranked = self._apply_soft_index_boost(
+                issue_text, ranked, top_k,
+            )
+
         # ── Step 4: Skeleton + Explanation ────────────────────────
         from openlibrary_kg.downstream.path_explainer import (
             explain_file_ranking,
@@ -280,6 +305,111 @@ class IssueLocalizer:
             entry["explanation"] = explanation
 
         return ranked
+
+    def _soft_index_only_ranking(
+        self,
+        issue_text: str,
+        top_k: int = 10,
+    ) -> list[dict[str, Any]]:
+        """Produce a file ranking from the soft-index alone.
+
+        Called when the KG has zero concept matches for the issue.
+        This is the last-resort signal: files whose imports or blocked
+        identifiers overlap with the issue text still get surfaced.
+        """
+        tokens = [t.lower() for t in _TOKEN_RE.findall(issue_text)]
+        file_scores: dict[str, float] = defaultdict(float)
+
+        for token in set(tokens):
+            files = self._soft_index.get(token, [])
+            if not files:
+                continue
+            idf = self._soft_idf.get(token, 1.0)
+            contrib = 0.3 * idf
+            for fp in files:
+                fp_norm = fp.replace("\\", "/")
+                for pre in ("openlibrary/openlibrary/", "Openlibrary/openlibrary/"):
+                    if pre in fp_norm:
+                        fp_norm = fp_norm.split(pre, 1)[1]
+                file_scores[fp_norm] += contrib
+
+        if not file_scores:
+            return []
+
+        ranked = sorted(file_scores.items(), key=lambda kv: kv[1], reverse=True)
+        return [
+            {
+                "file_path": fp,
+                "score": round(score, 4),
+                "top_function": "",
+                "top_function_score": 0.0,
+                "top_functions": [],
+                "matched_concepts": [],
+                "num_matched_concepts": 0,
+                "_from_soft_index": True,
+            }
+            for fp, score in ranked[:top_k]
+        ]
+
+    # ==================================================================
+    # Short-title enrichment
+    # ==================================================================
+
+    def _apply_soft_index_boost(
+        self,
+        issue_text: str,
+        ranked: list[dict[str, Any]],
+        top_k: int,
+    ) -> list[dict[str, Any]]:
+        """Boost files whose tokens match the soft-index (blocked concepts).
+
+        Tokens that Phase 1 filtered out (stdlib modules, framework names
+        like ``requests``, ``urllib``) never entered the KG, but they are
+        still strong file-level signals for issue localization.
+        """
+        tokens_raw = [t.lower() for t in _TOKEN_RE.findall(issue_text)]
+        tokens_set = set(tokens_raw)
+
+        # Only boost with tokens that have NO KG concept match — these
+        # are the "blind spot" signals.
+        kg_names = set(self.concepts_by_name.keys())
+        orphan_tokens = {t for t in tokens_set if t not in kg_names and t in self._soft_index}
+
+        if not orphan_tokens:
+            return ranked
+
+        # Build a boost map: file_path → total boost
+        # Normalise soft-index absolute paths to match ranked entry format
+        boost_map: dict[str, float] = defaultdict(float)
+        for token in orphan_tokens:
+            files = self._soft_index.get(token, [])
+            if not files:
+                continue
+            idf = self._soft_idf.get(token, 1.0)
+            boost_per_file = 0.25 * idf  # soft signal is weaker than KG concepts
+            for fp in files:
+                # Normalise to relative (strip the openlibrary/openlibrary/ prefix)
+                fp_norm = fp.replace("\\", "/")
+                for pre in ("openlibrary/openlibrary/", "Openlibrary/openlibrary/"):
+                    if pre in fp_norm:
+                        fp_norm = fp_norm.split(pre, 1)[1]
+                boost_map[fp_norm] += boost_per_file
+
+        if not boost_map:
+            return ranked
+
+        # Apply boost to existing ranked entries
+        for entry in ranked:
+            fp = entry.get("file_path", "")
+            if fp in boost_map:
+                orig = entry.get("score", 0.0)
+                entry["_score_before_boost"] = orig
+                entry["score"] = orig + boost_map[fp]
+                entry["_soft_boost"] = boost_map[fp]
+
+        # Re-sort
+        ranked.sort(key=lambda e: e.get("score", 0.0), reverse=True)
+        return ranked[:top_k]
 
     # ==================================================================
     # Short-title enrichment

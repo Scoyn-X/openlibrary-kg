@@ -15,7 +15,8 @@
 | 迭代三 | 语义导航层：embedding检索 + 3-hop BFS | Recall 82.4% |
 | 迭代四 | 根因分析 + 消融实验 + 混合评分 | 消融：embedding +18.7pp |
 | 迭代五 | 全量覆盖重跑 + eps修复 + 共现调试 + LLM翻译 | **Recall 84.6%** |
-| **迭代六** | **KG平台化 + 短标题enrichment + 密度排名** | **Recall 84.6%, MRR 0.580** |
+| **迭代六** | KG平台化 + 短标题enrichment + 密度排名 | Recall 84.6%, MRR 0.580 |
+| **迭代七** | 软索引 + 策略路由 + LLM-native baseline | Recall 84.6%, GPT-4o=85.7%, BM25=92.3% |
 
 ---。
 
