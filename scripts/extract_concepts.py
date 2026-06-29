@@ -125,6 +125,25 @@ def run_phase_1(config: Config) -> dict[str, Any]:
             all_occurrences.append(occ_dict)
             occ_count += 1
 
+            # ---- compound-name preservation ─────────────────────────
+            # When a multi-token identifier loses tokens to filtering
+            # (e.g. "format_languages" → "languages", "read_subjects" →
+            # "subjects"), the surviving single token is spread across
+            # dozens of files and lacks the specificity to anchor an
+            # issue.  We create a SECOND occurrence whose split_name is
+            # the full raw identifier — giving the compound its own KG
+            # concept with high IDF and natural co-occurrence edges.
+            # ───────────────────────────────────────────────────────────
+            kept_tokens = [t for t in split_name.split("_") if len(t) >= min_len]
+            if has_blocked_token and len(kept_tokens) <= 1 and len(raw_tokens) >= 2:
+                full_name = raw_lower
+                if full_name not in effective_stop_words:
+                    extra = occ.model_copy()
+                    extra.split_name = full_name
+                    extra_dict = extra.model_dump()
+                    all_occurrences.append(extra_dict)
+                    occ_count += 1
+
     logger.info(
         "Pass 1: extracted %d occurrences from %d files (before coverage filter)",
         occ_count, file_count,

@@ -3,9 +3,9 @@
     "method": "KG-walk",
     "n": 91,
     "top_k": 10,
-    "file_recall_at_k": "60.4%",
-    "file_mrr": "0.321",
-    "function_recall_at_k": "52.7%",
-    "function_mrr": "0.265"
+    "file_recall_at_k": "87.9%",
+    "file_mrr": "0.540",
+    "function_recall_at_k": "79.1%",
+    "function_mrr": "0.459"
   }
 ]
