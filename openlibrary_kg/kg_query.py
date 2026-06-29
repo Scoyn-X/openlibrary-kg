@@ -225,6 +225,233 @@ class KGQuery:
 
         return nodes, edge_set
 
+    # ── Agent-native query API ──────────────────────────────────────────
+    # These return structured, explainable answers designed for
+    # consumption by AI agents (SWE-agent, Codex CLI, Claude Code, etc.)
+    # as well as human developers.
+
+    def concept_card(self, name: str) -> dict[str, Any] | None:
+        """Structured summary of a concept for Agent consumption.
+
+        Returns a dict with: name, definition, frequency, files, neighbors,
+        polysemy clusters — everything an Agent needs to understand what
+        this concept means in the codebase.
+        """
+        ci = self.concepts.get(name)
+        if ci is None:
+            return None
+
+        neighbors = []
+        for nb in sorted(self._adjacency.get(name, set())):
+            nb_ci = self.concepts.get(nb)
+            nb_def = nb_ci.definition[:80] if nb_ci else ""
+            neighbors.append({"name": nb, "definition_preview": nb_def})
+
+        files_list = sorted(ci.files)[:15]
+
+        return {
+            "name": ci.name,
+            "definition": ci.definition,
+            "frequency": ci.frequency,
+            "file_count": len(ci.files),
+            "files": files_list,
+            "neighbors": neighbors,
+            "polysemy_clusters": ci.cluster_count,
+            "idf": self._idf.get(name, 0.0),
+        }
+
+    def explain_path(
+        self,
+        seed: str,
+        target: str,
+        max_hops: int = 4,
+    ) -> dict[str, Any] | None:
+        """Find a reasoning path from one concept to another, with full
+        edge annotations.  Returns None if unreachable.
+
+        Agent use: "Why did the KG suggest this file? Walk me through it."
+        """
+        if seed not in self.concepts or target not in self.concepts:
+            return None
+        if seed == target:
+            return {"path": [seed], "hops": 0, "explanation": "Same concept."}
+
+        # BFS with parent tracking
+        from collections import deque
+        parent: dict[str, tuple[str, str, float]] = {}  # node -> (from, edge_type, weight)
+        queue = deque([seed])
+        visited = {seed}
+
+        while queue and len(visited) < 5000:
+            cur = queue.popleft()
+            cur_hop = 0
+            # Count hops from seed
+            p = cur
+            while p != seed:
+                p = parent[p][0]
+                cur_hop += 1
+            if cur_hop >= max_hops:
+                continue
+
+            for nb in self._adjacency.get(cur, set()):
+                if nb in visited:
+                    continue
+                visited.add(nb)
+                # Find the edge(s) between cur and nb
+                for e in self._edges:
+                    if (e.source == cur and e.target == nb) or (e.source == nb and e.target == cur):
+                        parent[nb] = (cur, e.edge_type, e.weight)
+                        break
+                else:
+                    parent[nb] = (cur, "unknown", 0.0)
+
+                if nb == target:
+                    # Reconstruct path
+                    path = [target]
+                    n = target
+                    while n != seed:
+                        n = parent[n][0]
+                        path.append(n)
+                    path.reverse()
+
+                    # Build explanation
+                    steps = []
+                    for i in range(len(path) - 1):
+                        a, b = path[i], path[i + 1]
+                        _, etype, ew = parent[b]
+                        ci_a = self.concepts.get(a)
+                        ci_b = self.concepts.get(b)
+                        steps.append({
+                            "from": a,
+                            "to": b,
+                            "edge_type": etype,
+                            "edge_weight": round(ew, 3),
+                            "from_def": ci_a.definition[:100] if ci_a else "",
+                            "to_def": ci_b.definition[:100] if ci_b else "",
+                        })
+
+                    return {
+                        "path": path,
+                        "hops": len(steps),
+                        "steps": steps,
+                        "explanation": " → ".join(
+                            f"{s['from']}-[{s['edge_type']}]->{s['to']}"
+                            for s in steps
+                        ),
+                    }
+
+                queue.append(nb)
+
+        return None
+
+    def reverse_impact(
+        self,
+        file_path: str,
+        radius: int = 1,
+    ) -> dict[str, Any]:
+        """What would be affected if a file were modified?
+
+        Agent use: "Before I edit core/lending.py, what else should I check?"
+
+        Returns concepts in this file, their 1-hop neighbors, and all
+        files containing those neighbor concepts.
+        """
+        fp_norm = self._norm_path(file_path)
+        # Find matching file
+        matched_fp = fp_norm
+        for f in self._file_concepts:
+            if fp_norm in f or f.endswith(fp_norm):
+                matched_fp = f
+                break
+
+        local_concepts = set(self._file_concepts.get(matched_fp, set()))
+
+        # Expand to neighbors
+        affected_concepts = set(local_concepts)
+        for _ in range(radius):
+            new = set()
+            for c in affected_concepts:
+                new |= self._adjacency.get(c, set())
+            affected_concepts |= new
+
+        # Map affected concepts to files
+        affected_files: dict[str, set[str]] = defaultdict(set)
+        for c in affected_concepts:
+            for fp in self._concept_files.get(c, set()):
+                affected_files[self._norm_path(fp)].add(c)
+
+        # Classify: direct (local) vs indirect (neighbor reachable)
+        direct_files = {}
+        indirect_files = {}
+        for fp, concepts in affected_files.items():
+            overlap = concepts & local_concepts
+            if overlap:
+                direct_files[fp] = sorted(overlap)[:10]
+            elif fp_norm not in fp and fp not in fp_norm:
+                indirect_files[fp] = sorted(concepts)[:10]
+
+        return {
+            "file": fp_norm,
+            "local_concepts": sorted(local_concepts)[:20],
+            "local_count": len(local_concepts),
+            "affected_concepts_total": len(affected_concepts),
+            "directly_affected_files": [
+                {"path": fp, "shared_concepts": cs}
+                for fp, cs in sorted(direct_files.items())[:15]
+            ],
+            "indirectly_affected_files": [
+                {"path": fp, "via_concepts": cs}
+                for fp, cs in sorted(indirect_files.items())[:15]
+            ],
+        }
+
+    def impact_report(
+        self,
+        file_paths: list[str],
+        radius: int = 1,
+    ) -> dict[str, Any]:
+        """Agent-facing structured impact report for multiple files.
+
+        Combines reverse_impact for each file, deduplicates, and produces
+        a single report suitable for Agent consumption before making edits.
+        """
+        per_file = {}
+        all_affected: set[str] = set()
+
+        for fp in file_paths:
+            report = self.reverse_impact(fp, radius=radius)
+            per_file[fp] = report
+            for item in report["directly_affected_files"]:
+                all_affected.add(item["path"])
+            for item in report["indirectly_affected_files"]:
+                all_affected.add(item["path"])
+
+        # Remove the input files themselves from 'affected'
+        normed_inputs = {self._norm_path(f) for f in file_paths}
+        truly_affected = []
+        for af in sorted(all_affected):
+            afn = self._norm_path(af)
+            if afn not in normed_inputs and not any(
+                afn.endswith(inf) or inf.endswith(afn)
+                for inf in file_paths
+            ):
+                truly_affected.append(af)
+
+        return {
+            "files_changed": file_paths,
+            "files_potentially_affected": truly_affected[:20],
+            "total_concepts_involved": sum(
+                r["affected_concepts_total"] for r in per_file.values()
+            ),
+            "per_file_detail": per_file,
+            "recommendation": (
+                f"修改 {len(file_paths)} 个文件，"
+                f"可能影响 {len(truly_affected)} 个相关文件，"
+                f"涉及 {sum(r['affected_concepts_total'] for r in per_file.values())} 个概念。"
+                f"建议运行相关测试并审查受影响文件的调用链。"
+            ),
+        }
+
     # ── Helpers ───────────────────────────────────────────────────────────
 
     @staticmethod

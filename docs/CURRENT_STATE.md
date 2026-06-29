@@ -17,6 +17,7 @@
 | 迭代五 | 全量覆盖重跑 + eps修复 + 共现调试 + LLM翻译 | **Recall 84.6%** |
 | **迭代六** | KG平台化 + 短标题enrichment + 密度排名 | Recall 84.6%, MRR 0.580 |
 | **迭代七** | 软索引 + 策略路由 + LLM-native baseline | Recall 84.6%, GPT-4o=85.7%, BM25=92.3% |
+| **迭代八** | Agent-native查询接口 + LLM-KG Oracle | KG 升级为 Agent 知识基础设施 |
 
 ---。
 

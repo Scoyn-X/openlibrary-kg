@@ -70,9 +70,12 @@ docs/                # 迭代记录与变更文档
 ## 迭代记录
 
 - [docs/CHANGES.md](docs/CHANGES.md) — 迭代一至三的完整改造记录
-- [docs/PHASE8_CHANGES.md](docs/PHASE8_CHANGES.md) — Phase 8 语义导航层实现
+- [docs/PHASE8_CHANGES.md](docs/PHASE8_CHANGES.md) — 迭代三：Phase 8 语义导航层实现
 - [docs/ITERATION_4_5.md](docs/ITERATION_4_5.md) — 迭代四+五：根因诊断与对照实验
-- [docs/CURRENT_STATE.md](docs/CURRENT_STATE.md) — 项目基线诊断
+- [docs/ITERATION_6.md](docs/ITERATION_6.md) — 迭代六：KG 平台化 + 密度排名 + 短标题enrichment
+- [docs/ITERATION_7.md](docs/ITERATION_7.md) — 迭代七：软索引 + 策略路由 + GPT-4o baseline
+- [docs/ITERATION_8.md](docs/ITERATION_8.md) — 迭代八：Agent-native查询 + LLM-KG Oracle
+- [docs/CURRENT_STATE.md](docs/CURRENT_STATE.md) — 当前状态
 - [docs/PROJECT_ANALYSIS.md](docs/PROJECT_ANALYSIS.md) — 项目分析
 
 ## 数据规模
