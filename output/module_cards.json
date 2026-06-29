@@ -1,0 +1,3393 @@
+{
+  "total": 261,
+  "by_layer": {
+    "domain_model": 12,
+    "business_logic": 55,
+    "http_handler": 39,
+    "utility": 65,
+    "script": 53,
+    "data_access": 30,
+    "config": 7
+  },
+  "cards": [
+    {
+      "file_path": "openlibrary/accounts/__init__.py",
+      "responsibility": "",
+      "layer": "utility",
+      "key_concepts": [],
+      "symbol_count": 10,
+      "imports_from_count": 5,
+      "imported_by_count": 16
+    },
+    {
+      "file_path": "openlibrary/accounts/model.py",
+      "responsibility": "",
+      "layer": "utility",
+      "key_concepts": [],
+      "symbol_count": 75,
+      "imports_from_count": 10,
+      "imported_by_count": 1
+    },
+    {
+      "file_path": "openlibrary/actions.py",
+      "responsibility": "",
+      "layer": "utility",
+      "key_concepts": [],
+      "symbol_count": 1,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/admin/code.py",
+      "responsibility": "Handles HTTP requests for admin-related pages and static content in the OpenLibrary admin interface.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "admin interface",
+        "static content",
+        "HTTP request handling"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/admin/numbers.py",
+      "responsibility": "Provides administrative functions for querying and analyzing various statistics and metrics related to OpenLibrary data.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "administrative statistics",
+        "data analysis",
+        "bot activity"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/admin/stats.py",
+      "responsibility": "This file manages the collection and storage of administrative statistics for OpenLibrary.",
+      "layer": "script",
+      "key_concepts": [
+        "administrative statistics",
+        "data collection",
+        "configuration management"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/admin/utils.py",
+      "responsibility": "Provides utility functions for admin-related web processing and error handling.",
+      "layer": "utility",
+      "key_concepts": [
+        "admin processing",
+        "error handling",
+        "web utilities"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/api.py",
+      "responsibility": "Provides API client functionality for interacting with the OpenLibrary service.",
+      "layer": "data_access",
+      "key_concepts": [
+        "API interaction",
+        "authentication",
+        "data retrieval"
+      ],
+      "symbol_count": 20,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/app.py",
+      "responsibility": "Defines the view and subview classes for rendering templates in the OpenLibrary application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "template rendering",
+        "view management",
+        "web interface"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/asgi_app.py",
+      "responsibility": "This file sets up and configures the ASGI application for OpenLibrary, including internationalization and debugging.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "application setup",
+        "internationalization",
+        "debugging"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/book_providers.py",
+      "responsibility": "Defines various book providers for accessing and acquiring ebook metadata and content.",
+      "layer": "data_access",
+      "key_concepts": [
+        "ebook access",
+        "book acquisition",
+        "metadata providers"
+      ],
+      "symbol_count": 76,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/add_book/__init__.py",
+      "responsibility": "Handles the addition of new books to the catalog, including validation and normalization of book data.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "book addition",
+        "data validation",
+        "catalog management"
+      ],
+      "symbol_count": 34,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/add_book/load_book.py",
+      "responsibility": "Handles the process of importing and matching book and author records into the catalog.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "book import",
+        "author matching",
+        "catalog integration"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/add_book/match.py",
+      "responsibility": "Provides functions to match and normalize book edition records for cataloging.",
+      "layer": "utility",
+      "key_concepts": [
+        "book edition matching",
+        "record normalization",
+        "cataloging"
+      ],
+      "symbol_count": 25,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/get_ia.py",
+      "responsibility": "Provides functions to retrieve MARC records from the Internet Archive.",
+      "layer": "data_access",
+      "key_concepts": [
+        "MARC records",
+        "Internet Archive",
+        "catalog metadata"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/marc/get_subjects.py",
+      "responsibility": "This file processes and extracts subject information from MARC records.",
+      "layer": "utility",
+      "key_concepts": [
+        "subject extraction",
+        "MARC records",
+        "catalog metadata"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/marc/html.py",
+      "responsibility": "Provides functions and classes to convert MARC records into HTML format.",
+      "layer": "utility",
+      "key_concepts": [
+        "MARC records",
+        "HTML conversion",
+        "catalog metadata"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 2,
+      "imported_by_count": 2
+    },
+    {
+      "file_path": "openlibrary/catalog/marc/marc_base.py",
+      "responsibility": "Defines base classes and methods for handling MARC records and fields.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "MARC records",
+        "bibliographic data",
+        "metadata fields"
+      ],
+      "symbol_count": 17,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/marc/marc_binary.py",
+      "responsibility": "Handles binary MARC record parsing and manipulation.",
+      "layer": "data_access",
+      "key_concepts": [
+        "MARC records",
+        "binary data parsing",
+        "library cataloging"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/marc/marc_xml.py",
+      "responsibility": "This file provides classes and functions for parsing and handling MARC XML data.",
+      "layer": "data_access",
+      "key_concepts": [
+        "MARC XML parsing",
+        "bibliographic data",
+        "catalog metadata"
+      ],
+      "symbol_count": 14,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/marc/mnemonics.py",
+      "responsibility": "Provides functions to load and read mnemonic tables for MARC records.",
+      "layer": "utility",
+      "key_concepts": [
+        "MARC records",
+        "mnemonic tables",
+        "data parsing"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/marc/parse.py",
+      "responsibility": "This file parses MARC records to extract bibliographic identifiers and metadata.",
+      "layer": "data_access",
+      "key_concepts": [
+        "MARC records",
+        "bibliographic identifiers",
+        "metadata extraction"
+      ],
+      "symbol_count": 37,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/utils/__init__.py",
+      "responsibility": "Provides utility functions for processing and normalizing catalog data.",
+      "layer": "utility",
+      "key_concepts": [
+        "catalog data normalization",
+        "author name processing",
+        "date parsing"
+      ],
+      "symbol_count": 33,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/catalog/utils/query.py",
+      "responsibility": "Provides utility functions for querying catalog data and handling URLs.",
+      "layer": "utility",
+      "key_concepts": [
+        "catalog querying",
+        "URL handling",
+        "cover availability"
+      ],
+      "symbol_count": 16,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/code.py",
+      "responsibility": "Initializes the OpenLibrary application by setting up logging and loading views.",
+      "layer": "config",
+      "key_concepts": [
+        "application initialization",
+        "logging configuration",
+        "view loading"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/config.py",
+      "responsibility": "This file manages the loading and setup of configuration settings for the OpenLibrary application.",
+      "layer": "config",
+      "key_concepts": [
+        "configuration management",
+        "application settings",
+        "environment setup"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/admin.py",
+      "responsibility": "This file provides functionality for gathering and managing various statistics related to admin operations.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "statistics",
+        "admin operations",
+        "user activity"
+      ],
+      "symbol_count": 11,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/auth.py",
+      "responsibility": "This file manages authentication and authorization mechanisms including token generation and validation.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "authentication",
+        "authorization",
+        "token management"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/batch_imports.py",
+      "responsibility": "Handles the process of importing batches of data into the system, including error handling and result generation.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "batch processing",
+        "data import",
+        "error handling"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/bestbook.py",
+      "responsibility": "Manages the logic for determining and handling best books and awards.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "best books",
+        "awards",
+        "leaderboards"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/booknotes.py",
+      "responsibility": "This file manages the creation, retrieval, and analysis of booknotes within the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "booknotes",
+        "user engagement",
+        "reading habits"
+      ],
+      "symbol_count": 13,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/bookshelves.py",
+      "responsibility": "This file manages and summarizes data related to bookshelves and reading logs.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "bookshelves",
+        "reading logs",
+        "user interactions"
+      ],
+      "symbol_count": 30,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/bookshelves_events.py",
+      "responsibility": "This file manages events related to bookshelves, including creation, selection, and updating of bookshelf events.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "bookshelves",
+        "event management",
+        "user interactions"
+      ],
+      "symbol_count": 16,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/cache.py",
+      "responsibility": "This file provides caching mechanisms and utilities for optimizing data retrieval and storage.",
+      "layer": "utility",
+      "key_concepts": [
+        "caching",
+        "data retrieval optimization",
+        "performance enhancement"
+      ],
+      "symbol_count": 43,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/db.py",
+      "responsibility": "Provides database access functions and utilities for managing user and work data.",
+      "layer": "data_access",
+      "key_concepts": [
+        "database operations",
+        "user management",
+        "work management"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 8,
+      "imported_by_count": 1
+    },
+    {
+      "file_path": "openlibrary/core/edits.py",
+      "responsibility": "This file manages the community edits queue and related operations such as submitting, assigning, and reviewing edit requests.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "community edits",
+        "edit requests",
+        "review process"
+      ],
+      "symbol_count": 18,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/env.py",
+      "responsibility": "Manages environment settings and configurations for the OpenLibrary application.",
+      "layer": "config",
+      "key_concepts": [
+        "environment settings",
+        "configuration management",
+        "application settings"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/follows.py",
+      "responsibility": "Manages user follow relationships and notifications within the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "user relationships",
+        "notifications",
+        "social interactions"
+      ],
+      "symbol_count": 16,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/formats.py",
+      "responsibility": "Provides functions for loading and dumping data in YAML and JSON formats.",
+      "layer": "utility",
+      "key_concepts": [
+        "data serialization",
+        "YAML processing",
+        "JSON processing"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/fulltext.py",
+      "responsibility": "This file handles full-text search functionality and integration with external services.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "full-text search",
+        "external service integration",
+        "asynchronous processing"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/helpers.py",
+      "responsibility": "Provides utility functions for data formatting, encoding, and date manipulation.",
+      "layer": "utility",
+      "key_concepts": [
+        "data formatting",
+        "date manipulation",
+        "JSON encoding"
+      ],
+      "symbol_count": 24,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/ia.py",
+      "responsibility": "This file provides functions to interact with the Internet Archive's API and process item metadata.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Internet Archive integration",
+        "item metadata",
+        "digital content retrieval"
+      ],
+      "symbol_count": 23,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/imports.py",
+      "responsibility": "Manages the import process for batches of items into the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "import process",
+        "batch management",
+        "item normalization"
+      ],
+      "symbol_count": 30,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/lending.py",
+      "responsibility": "This file manages the availability and access logic for lending ebooks.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "ebook lending",
+        "availability",
+        "access control"
+      ],
+      "symbol_count": 52,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/lists/engine.py",
+      "responsibility": "This file provides functions to retrieve various components like seeds, authors, and subjects for lists.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "list management",
+        "author retrieval",
+        "subject categorization"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/lists/model.py",
+      "responsibility": "Defines the data models and structures for managing lists and series within the OpenLibrary.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "lists",
+        "series",
+        "data modeling"
+      ],
+      "symbol_count": 60,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/middleware.py",
+      "responsibility": "Implements middleware for compressing HTTP responses using GZip.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "HTTP response compression",
+        "middleware",
+        "web performance"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 3,
+      "imported_by_count": 71
+    },
+    {
+      "file_path": "openlibrary/core/models.py",
+      "responsibility": "Defines core data models and entities for the OpenLibrary system.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "library entities",
+        "metadata management",
+        "user profiles"
+      ],
+      "symbol_count": 121,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/observations.py",
+      "responsibility": "This file manages the retrieval and analysis of observation data within the system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "observation data",
+        "data analysis",
+        "user feedback"
+      ],
+      "symbol_count": 20,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/olmarkdown.py",
+      "responsibility": "This file defines custom Markdown preprocessors and converters for rendering OpenLibrary-specific markdown content.",
+      "layer": "utility",
+      "key_concepts": [
+        "markdown processing",
+        "content rendering",
+        "text formatting"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/pd.py",
+      "responsibility": "This file constructs and executes public domain request queries.",
+      "layer": "data_access",
+      "key_concepts": [
+        "public domain",
+        "query execution",
+        "database interaction"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/processors/__init__.py",
+      "responsibility": "Initializes and organizes the processors module for handling various processing tasks.",
+      "layer": "utility",
+      "key_concepts": [
+        "processing tasks",
+        "module organization",
+        "initialization"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/processors/invalidation.py",
+      "responsibility": "Handles cache invalidation processes and hooks for the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "cache invalidation",
+        "version control",
+        "datetime management"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/processors/readableurls.py",
+      "responsibility": "This file processes and generates readable URLs for OpenLibrary entities.",
+      "layer": "utility",
+      "key_concepts": [
+        "URL processing",
+        "readability",
+        "entity identification"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/ratings.py",
+      "responsibility": "This file manages the computation and retrieval of ratings and ratings summaries for works and books.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "ratings",
+        "works",
+        "books"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/schema.py",
+      "responsibility": "This file manages the registration and retrieval of database schemas.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "database schema",
+        "schema registration",
+        "schema retrieval"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/sendmail.py",
+      "responsibility": "Provides functionality to send emails using predefined templates.",
+      "layer": "utility",
+      "key_concepts": [
+        "email communication",
+        "template rendering",
+        "notification system"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 3,
+      "imported_by_count": 1
+    },
+    {
+      "file_path": "openlibrary/core/stats.py",
+      "responsibility": "Provides functions to interact with a statistics client for tracking application metrics.",
+      "layer": "utility",
+      "key_concepts": [
+        "application metrics",
+        "statistics tracking",
+        "performance monitoring"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/statsdb.py",
+      "responsibility": "This file manages the creation, retrieval, and updating of statistical entries in the database.",
+      "layer": "data_access",
+      "key_concepts": [
+        "statistical data",
+        "database operations",
+        "data management"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/vendors.py",
+      "responsibility": "This file provides functions and classes for interacting with and retrieving metadata from vendor APIs like Amazon.",
+      "layer": "data_access",
+      "key_concepts": [
+        "vendor integration",
+        "metadata retrieval",
+        "Amazon API"
+      ],
+      "symbol_count": 22,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/waitinglist.py",
+      "responsibility": "Manages the waiting list functionality for books, including user interactions and notifications.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "waiting list management",
+        "user notifications",
+        "book availability"
+      ],
+      "symbol_count": 27,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/wikidata.py",
+      "responsibility": "This file manages the representation and interaction with Wikidata entities.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "Wikidata entities",
+        "external profiles",
+        "metadata representation"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/core/yearly_reading_goals.py",
+      "responsibility": "Manages yearly reading goals for users including creation, retrieval, updating, and deletion.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "reading goals",
+        "user tracking",
+        "annual targets"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/archive.py",
+      "responsibility": "Handles archiving and uploading of cover images to the Internet Archive.",
+      "layer": "data_access",
+      "key_concepts": [
+        "cover images",
+        "archiving",
+        "Internet Archive"
+      ],
+      "symbol_count": 38,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/code.py",
+      "responsibility": "Handles operations related to cover image storage and retrieval.",
+      "layer": "data_access",
+      "key_concepts": [
+        "cover image management",
+        "image indexing",
+        "image upload"
+      ],
+      "symbol_count": 35,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/config.py",
+      "responsibility": "Provides configuration settings for the cover store service.",
+      "layer": "config",
+      "key_concepts": [
+        "cover store",
+        "configuration",
+        "service settings"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/coverlib.py",
+      "responsibility": "This file provides functions for handling image operations such as saving, resizing, and reading cover images.",
+      "layer": "utility",
+      "key_concepts": [
+        "image processing",
+        "cover storage",
+        "file management"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/db.py",
+      "responsibility": "This file manages database interactions for cover storage operations.",
+      "layer": "data_access",
+      "key_concepts": [
+        "cover storage",
+        "database interactions",
+        "cover metadata"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/oldb.py",
+      "responsibility": "Provides functions to interact with the coverstore database and cache for retrieving cover properties.",
+      "layer": "data_access",
+      "key_concepts": [
+        "cover properties",
+        "database interaction",
+        "caching"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/schema.py",
+      "responsibility": "Defines the schema for coverstore data validation.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "coverstore",
+        "data validation",
+        "schema definition"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/server.py",
+      "responsibility": "This file sets up and runs the FastCGI server for the coverstore service.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "coverstore service",
+        "server setup",
+        "FastCGI"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/coverstore/utils.py",
+      "responsibility": "Provides utility functions for URL manipulation, file operations, and data conversion in the coverstore module.",
+      "layer": "utility",
+      "key_concepts": [
+        "URL manipulation",
+        "file operations",
+        "data conversion"
+      ],
+      "symbol_count": 13,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/data/__init__.py",
+      "responsibility": "Provides functionality to parse data tables for OpenLibrary.",
+      "layer": "utility",
+      "key_concepts": [
+        "data parsing",
+        "data tables",
+        "OpenLibrary data"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/data/db.py",
+      "responsibility": "Provides functions for setting up and interacting with the database and caching systems.",
+      "layer": "data_access",
+      "key_concepts": [
+        "database setup",
+        "document retrieval",
+        "caching"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/data/dump.py",
+      "responsibility": "This file provides functions for generating, reading, and manipulating data dumps.",
+      "layer": "utility",
+      "key_concepts": [
+        "data dumps",
+        "file processing",
+        "data indexing"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/data/sitemap.py",
+      "responsibility": "Generates and writes sitemap files for the website.",
+      "layer": "utility",
+      "key_concepts": [
+        "sitemap generation",
+        "website indexing",
+        "file writing"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/account.py",
+      "responsibility": "Handles HTTP requests related to user account authentication and login forms.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "user authentication",
+        "login process",
+        "account management"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/auth.py",
+      "responsibility": "Handles authentication of users via cookies in the FastAPI application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "authentication",
+        "user identity",
+        "session management"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/books.py",
+      "responsibility": "Defines query parameters and request handling for the books API using FastAPI.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "books API",
+        "query parameters",
+        "request handling"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/cdn.py",
+      "responsibility": "Handles CDN-related HTTP requests and responses using FastAPI.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "CDN integration",
+        "HTTP routing",
+        "API response handling"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/checkins.py",
+      "responsibility": "Handles check-in related HTTP requests and validation for the OpenLibrary FastAPI application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "check-ins",
+        "event validation",
+        "user authentication"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/internal/api.py",
+      "responsibility": "Defines API request and response models for availability, trending, booknotes, and pricing in the FastAPI application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "availability",
+        "trending",
+        "booknotes",
+        "pricing"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/languages.py",
+      "responsibility": "Defines the Language class and handles HTTP requests related to language data.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "language data",
+        "API endpoints",
+        "HTTP requests"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/lists.py",
+      "responsibility": "Handles HTTP requests related to lists in the OpenLibrary FastAPI application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "lists",
+        "HTTP requests",
+        "API routing"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/models.py",
+      "responsibility": "Defines models and utility functions for handling pagination and Solr query parameters in the FastAPI application.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "pagination",
+        "Solr query parameters",
+        "API request handling"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/partials.py",
+      "responsibility": "Defines FastAPI routes for handling partial page components and their interactions.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "partial page components",
+        "user interaction",
+        "API routing"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/public_my_books.py",
+      "responsibility": "This file defines the data models and API endpoints for managing and retrieving user reading logs in the OpenLibrary system.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "user reading logs",
+        "API endpoints",
+        "user authentication"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/publishers.py",
+      "responsibility": "Handles HTTP requests related to publisher data in the OpenLibrary FastAPI application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "publisher data",
+        "HTTP requests",
+        "API endpoints"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/search.py",
+      "responsibility": "Defines request and response models and parsing logic for search-related API endpoints in the OpenLibrary FastAPI application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "search queries",
+        "API request validation",
+        "search response formatting"
+      ],
+      "symbol_count": 11,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/services/subject_service.py",
+      "responsibility": "Defines request parameters for subject-related operations in the FastAPI service.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "subject management",
+        "request parameters",
+        "pagination"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/subjects.py",
+      "responsibility": "This file defines HTTP endpoints for handling subject-related requests in the OpenLibrary API.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "subjects",
+        "API endpoints",
+        "HTTP requests"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/fastapi/yearly_reading_goals.py",
+      "responsibility": "Handles HTTP requests related to yearly reading goals, including validation and response formatting.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "yearly reading goals",
+        "user authentication",
+        "goal validation"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/i18n/__init__.py",
+      "responsibility": "This file provides functions for managing and validating translation files and localization processes.",
+      "layer": "utility",
+      "key_concepts": [
+        "localization",
+        "translation management",
+        "internationalization"
+      ],
+      "symbol_count": 19,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/i18n/test_po_files.py",
+      "responsibility": "This file contains tests for verifying the structure and content of PO files used for internationalization.",
+      "layer": "utility",
+      "key_concepts": [
+        "internationalization",
+        "PO files",
+        "localization testing"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/i18n/validators.py",
+      "responsibility": "Provides validation functions for internationalization message catalogs.",
+      "layer": "utility",
+      "key_concepts": [
+        "internationalization",
+        "message validation",
+        "localization"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/olbase/__init__.py",
+      "responsibility": "Initializes plugins for the OpenLibrary application.",
+      "layer": "config",
+      "key_concepts": [
+        "plugin management",
+        "application initialization",
+        "event handling"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/olbase/events.py",
+      "responsibility": "This file manages event handling and memcache invalidation for OpenLibrary.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "event handling",
+        "memcache management",
+        "data invalidation"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/admin/code.py",
+      "responsibility": "Provides administrative functionalities and tools for managing and reverting changes in the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "administration",
+        "change management",
+        "system maintenance"
+      ],
+      "symbol_count": 107,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/admin/graphs.py",
+      "responsibility": "This file provides functionality for creating and managing Graphite graphs for monitoring and analytics.",
+      "layer": "utility",
+      "key_concepts": [
+        "monitoring",
+        "analytics",
+        "graph rendering"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/admin/services.py",
+      "responsibility": "This file provides services for monitoring and retrieving the status of various system components using Nagios.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "system monitoring",
+        "service status",
+        "Nagios integration"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/books/dynlinks.py",
+      "responsibility": "Provides dynamic linking and querying capabilities for OpenLibrary entities like editions and authors.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "dynamic linking",
+        "entity querying",
+        "OpenLibrary entities"
+      ],
+      "symbol_count": 38,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/books/readlinks.py",
+      "responsibility": "This file processes and manages read links for books, including status and metadata retrieval.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "read links",
+        "book metadata",
+        "status retrieval"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/importapi/code.py",
+      "responsibility": "Handles the import of book data and metadata into the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "book data import",
+        "metadata processing",
+        "error handling"
+      ],
+      "symbol_count": 19,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/importapi/import_edition_builder.py",
+      "responsibility": "This file constructs and manages the building of edition data for import into the system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "edition data",
+        "data import",
+        "metadata construction"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/importapi/import_opds.py",
+      "responsibility": "This file provides functions to parse OPDS feed data into structured formats.",
+      "layer": "utility",
+      "key_concepts": [
+        "OPDS feed parsing",
+        "catalog metadata",
+        "data transformation"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/importapi/import_rdf.py",
+      "responsibility": "This file parses RDF data to extract bibliographic information for import.",
+      "layer": "utility",
+      "key_concepts": [
+        "RDF parsing",
+        "bibliographic data",
+        "data import"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/importapi/import_ui.py",
+      "responsibility": "Handles HTTP requests for the import preview UI in the OpenLibrary import API.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "import preview",
+        "metadata providers",
+        "HTTP request handling"
+      ],
+      "symbol_count": 19,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/importapi/import_validator.py",
+      "responsibility": "Validates book import data to ensure it meets required standards.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "book import validation",
+        "author data integrity",
+        "identifier verification"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/inside/code.py",
+      "responsibility": "Handles HTTP requests for searching inside book content.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "searching",
+        "book content",
+        "fulltext search"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/ol_infobase.py",
+      "responsibility": "Provides utility functions and classes for database interactions and logging setup within the OpenLibrary plugin system.",
+      "layer": "utility",
+      "key_concepts": [
+        "database interactions",
+        "logging",
+        "plugin configuration"
+      ],
+      "symbol_count": 56,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/api.py",
+      "responsibility": "Defines API endpoints for various OpenLibrary features such as ratings, booknotes, and work management.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "user interactions",
+        "work management",
+        "API endpoints"
+      ],
+      "symbol_count": 49,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/authors.py",
+      "responsibility": "Handles HTTP requests related to author entities in the OpenLibrary system.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "author entities",
+        "HTTP request handling",
+        "OpenLibrary system"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/borrow_home.py",
+      "responsibility": "This file handles the setup and event tracking for loan creation and completion statistics.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "loan tracking",
+        "event handling",
+        "statistics"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/bulk_tag.py",
+      "responsibility": "Handles bulk tagging of works in the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "bulk tagging",
+        "works",
+        "user interaction"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/code.py",
+      "responsibility": "Defines various classes and functions for handling OpenLibrary-specific operations and data transformations.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "OpenLibrary operations",
+        "data transformations",
+        "context management"
+      ],
+      "symbol_count": 88,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/connection.py",
+      "responsibility": "This file manages middleware and connection handling for OpenLibrary's web requests.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "middleware",
+        "web requests",
+        "authentication"
+      ],
+      "symbol_count": 51,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/deprecated_handler.py",
+      "responsibility": "Handles deprecated HTTP requests and proxies them to updated FastAPI endpoints.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "HTTP request handling",
+        "API deprecation",
+        "endpoint proxying"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/design.py",
+      "responsibility": "This file defines the HTTP handler for rendering the home page of the OpenLibrary site.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "home page",
+        "web rendering",
+        "user interface"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/events.py",
+      "responsibility": "This file handles event hooks related to page edits and new version creations in OpenLibrary.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "page edits",
+        "event handling",
+        "version management"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/filters.py",
+      "responsibility": "Defines custom filters for web templating in the OpenLibrary application.",
+      "layer": "utility",
+      "key_concepts": [
+        "web templating",
+        "user authentication",
+        "URL processing"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/home.py",
+      "responsibility": "Handles the logic and data retrieval for rendering the OpenLibrary homepage.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "homepage rendering",
+        "ebook availability",
+        "featured subjects"
+      ],
+      "symbol_count": 16,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/infobase_hook.py",
+      "responsibility": "Defines a hook for integrating with the Infobase system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "Infobase integration",
+        "system hooks",
+        "logging"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/librarian_dashboard.py",
+      "responsibility": "Provides utility functions for building URLs and retrieving quality criteria for the librarian dashboard.",
+      "layer": "utility",
+      "key_concepts": [
+        "librarian dashboard",
+        "URL management",
+        "quality criteria"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/lists.py",
+      "responsibility": "Manages and processes user-created lists and their associated metadata.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "user lists",
+        "metadata processing",
+        "list management"
+      ],
+      "symbol_count": 75,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/opds.py",
+      "responsibility": "This file generates OPDS feeds for representing book and author data in XML format.",
+      "layer": "utility",
+      "key_concepts": [
+        "OPDS feeds",
+        "XML generation",
+        "book metadata"
+      ],
+      "symbol_count": 14,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/partials.py",
+      "responsibility": "Defines partial components for rendering various UI elements on the OpenLibrary website.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "UI components",
+        "user interaction",
+        "web rendering"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/pd.py",
+      "responsibility": "This file manages public domain options and queries for the OpenLibrary platform.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "public domain",
+        "data enrichment",
+        "query management"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/processors.py",
+      "responsibility": "Defines processors for handling HTTP request modifications such as CORS, profiles, and preferences.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "HTTP request processing",
+        "CORS",
+        "user preferences"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/schema.py",
+      "responsibility": "Defines the schema for OpenLibrary data entities.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "data schema",
+        "entity definition",
+        "OpenLibrary data structure"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/sentry.py",
+      "responsibility": "Sets up Sentry error tracking for the OpenLibrary application.",
+      "layer": "config",
+      "key_concepts": [
+        "error tracking",
+        "Sentry integration",
+        "application monitoring"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/stats.py",
+      "responsibility": "This file manages the collection, processing, and storage of statistical data related to OpenLibrary's performance and usage.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "performance metrics",
+        "usage statistics",
+        "data processing"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/status.py",
+      "responsibility": "This file manages the status and deployment operations for development and production environments.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "deployment management",
+        "environment status",
+        "development workflow"
+      ],
+      "symbol_count": 38,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/swagger.py",
+      "responsibility": "This file sets up and handles the Swagger API documentation for the OpenLibrary HTTP endpoints.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "API documentation",
+        "HTTP endpoints",
+        "Swagger integration"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/openlibrary/utils.py",
+      "responsibility": "Provides utility functions for the OpenLibrary plugin.",
+      "layer": "utility",
+      "key_concepts": [
+        "data sanitization",
+        "helper functions",
+        "plugin utilities"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/recaptcha/recaptcha.py",
+      "responsibility": "This file implements the Recaptcha functionality for validating user interactions.",
+      "layer": "utility",
+      "key_concepts": [
+        "user validation",
+        "security",
+        "captcha verification"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/account.py",
+      "responsibility": "Handles account-related operations such as login, creation, and migration.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "account management",
+        "authentication",
+        "user migration"
+      ],
+      "symbol_count": 120,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/adapter.py",
+      "responsibility": "Provides functions to convert and unconvert keys and dictionaries for data transformation.",
+      "layer": "utility",
+      "key_concepts": [
+        "data transformation",
+        "key conversion",
+        "dictionary manipulation"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/addbook.py",
+      "responsibility": "Handles the creation and saving of new book documents in the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "book creation",
+        "author management",
+        "document saving"
+      ],
+      "symbol_count": 57,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/addtag.py",
+      "responsibility": "Handles the creation, validation, and management of tags and subject tags within the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "tag management",
+        "subject tagging",
+        "validation"
+      ],
+      "symbol_count": 23,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/borrow.py",
+      "responsibility": "This file manages the borrowing process and status tracking for digital loans.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "borrowing",
+        "loan status",
+        "digital loans"
+      ],
+      "symbol_count": 30,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/checkins.py",
+      "responsibility": "Handles check-in operations for patrons including validation and date management.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "patron check-ins",
+        "date validation",
+        "user interactions"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/code.py",
+      "responsibility": "Implements various editing and document management functionalities for the OpenLibrary platform.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "document management",
+        "editing",
+        "user permissions"
+      ],
+      "symbol_count": 35,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/covers.py",
+      "responsibility": "This file manages the uploading, validation, and handling of cover images and photos for works and authors.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "cover management",
+        "image validation",
+        "media handling"
+      ],
+      "symbol_count": 26,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/data.py",
+      "responsibility": "This file manages the retrieval and handling of OpenLibrary data dumps.",
+      "layer": "data_access",
+      "key_concepts": [
+        "data dumps",
+        "data retrieval",
+        "OpenLibrary data"
+      ],
+      "symbol_count": 11,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/edits.py",
+      "responsibility": "Handles HTTP requests and processes community edit merge requests for OpenLibrary.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "community edits",
+        "merge requests",
+        "HTTP request handling"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/forms.py",
+      "responsibility": "This file defines forms and validation logic for user registration and account management.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "user registration",
+        "account management",
+        "form validation"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/jsdef.py",
+      "responsibility": "This file provides functionality to convert Python code into JavaScript code within web templates.",
+      "layer": "utility",
+      "key_concepts": [
+        "code conversion",
+        "web templating",
+        "JavaScript generation"
+      ],
+      "symbol_count": 17,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/merge_authors.py",
+      "responsibility": "Handles the merging and redirection of author records in the OpenLibrary system.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "author records",
+        "merging",
+        "redirection"
+      ],
+      "symbol_count": 34,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/models.py",
+      "responsibility": "Defines core data models for editions, authors, works, subjects, users, and changesets in the OpenLibrary system.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "editions",
+        "authors",
+        "works",
+        "subjects"
+      ],
+      "symbol_count": 110,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/mybooks.py",
+      "responsibility": "Manages user interactions and data related to personal book collections and reading logs.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "personal collections",
+        "reading logs",
+        "user interactions"
+      ],
+      "symbol_count": 44,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/recentchanges.py",
+      "responsibility": "This file handles the display and management of recent changes in the OpenLibrary system.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "recent changes",
+        "user activity",
+        "change history"
+      ],
+      "symbol_count": 23,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/spamcheck.py",
+      "responsibility": "This file provides functions to detect and manage spam content based on words and domains.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "spam detection",
+        "content moderation",
+        "email validation"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/table_of_contents.py",
+      "responsibility": "This file defines classes and functions for handling and parsing table of contents data in OpenLibrary.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "table of contents",
+        "author records",
+        "data parsing"
+      ],
+      "symbol_count": 20,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/utils.py",
+      "responsibility": "Provides utility functions and classes for rendering templates, handling language errors, and formatting data.",
+      "layer": "utility",
+      "key_concepts": [
+        "template rendering",
+        "language error handling",
+        "data formatting"
+      ],
+      "symbol_count": 99,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/upstream/yearly_reading_goals.py",
+      "responsibility": "Manages and calculates user-specific yearly reading goals.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "reading goals",
+        "user progress",
+        "annual targets"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/autocomplete.py",
+      "responsibility": "This file provides autocomplete functionality for various search categories in the OpenLibrary.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "autocomplete",
+        "search categories",
+        "user interaction"
+      ],
+      "symbol_count": 20,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/bulk_search.py",
+      "responsibility": "Handles bulk search operations for the work search plugin.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "bulk search",
+        "work search",
+        "search operations"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/code.py",
+      "responsibility": "This file implements the logic for processing and executing search queries against the Solr index for works.",
+      "layer": "data_access",
+      "key_concepts": [
+        "search queries",
+        "Solr indexing",
+        "faceted search"
+      ],
+      "symbol_count": 42,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/languages.py",
+      "responsibility": "Handles language-based search functionality within the OpenLibrary work search plugin.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "language search",
+        "work search",
+        "search indexing"
+      ],
+      "symbol_count": 11,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/publishers.py",
+      "responsibility": "This file handles the search and indexing of publishers within the OpenLibrary system.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "publisher search",
+        "indexing",
+        "search functionality"
+      ],
+      "symbol_count": 13,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/schemes/__init__.py",
+      "responsibility": "Defines and processes search schemes for transforming user queries into Solr-compatible parameters.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "search schemes",
+        "query transformation",
+        "Solr integration"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/schemes/authors.py",
+      "responsibility": "Defines the search scheme for querying authors in the Solr index.",
+      "layer": "data_access",
+      "key_concepts": [
+        "author search",
+        "Solr indexing",
+        "query translation"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/schemes/editions.py",
+      "responsibility": "Defines the search scheme for edition entities within the work search plugin.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "edition entities",
+        "search scheme",
+        "work search"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/schemes/lists.py",
+      "responsibility": "This file defines a search scheme for querying lists in Solr.",
+      "layer": "data_access",
+      "key_concepts": [
+        "search schemes",
+        "Solr querying",
+        "lists"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/schemes/subjects.py",
+      "responsibility": "This file defines a search scheme for handling subject-based queries and converting them to Solr parameters.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "subject-based search",
+        "query conversion",
+        "Solr integration"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/schemes/works.py",
+      "responsibility": "Defines transformations and query building for work search schemes in the OpenLibrary.",
+      "layer": "business_logic",
+      "key_concepts": [
+        "work search",
+        "query transformation",
+        "search indexing"
+      ],
+      "symbol_count": 13,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/search.py",
+      "responsibility": "Provides a function to retrieve a Solr instance for searching.",
+      "layer": "data_access",
+      "key_concepts": [
+        "search",
+        "Solr",
+        "indexing"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/plugins/worksearch/subjects.py",
+      "responsibility": "Handles the search and retrieval of works based on subject queries.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "subject search",
+        "work retrieval",
+        "catalog metadata"
+      ],
+      "symbol_count": 10,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/data_provider.py",
+      "responsibility": "Provides data access and integration with Solr for reading logs and metadata.",
+      "layer": "data_access",
+      "key_concepts": [
+        "reading logs",
+        "metadata integration",
+        "Solr indexing"
+      ],
+      "symbol_count": 29,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/query_utils.py",
+      "responsibility": "Provides utility functions for manipulating and parsing Solr query trees using the Luqum library.",
+      "layer": "utility",
+      "key_concepts": [
+        "Solr query manipulation",
+        "query parsing",
+        "search optimization"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/solr_types.py",
+      "responsibility": "Defines the structure and types for Solr documents used in indexing and querying.",
+      "layer": "domain_model",
+      "key_concepts": [
+        "Solr indexing",
+        "document structure",
+        "search queries"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 1,
+      "imported_by_count": 14
+    },
+    {
+      "file_path": "openlibrary/solr/types_generator.py",
+      "responsibility": "Generates Solr schema types from XML configuration files.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Solr schema",
+        "XML configuration",
+        "indexing"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/update.py",
+      "responsibility": "This file manages the configuration and execution of updates to the Solr index.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Solr indexing",
+        "configuration management",
+        "data updates"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/updater/abstract.py",
+      "responsibility": "Defines abstract base classes and methods for updating and building Solr documents.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Solr indexing",
+        "document building",
+        "data updating"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/updater/author.py",
+      "responsibility": "This file updates and builds Solr documents for author entities in the OpenLibrary system.",
+      "layer": "data_access",
+      "key_concepts": [
+        "author metadata",
+        "Solr indexing",
+        "catalog search"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/updater/edition.py",
+      "responsibility": "This file manages the updating and building of Solr documents for book editions.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Solr indexing",
+        "book editions",
+        "catalog metadata"
+      ],
+      "symbol_count": 33,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/updater/list.py",
+      "responsibility": "This file manages the updating and building of Solr documents for lists in the OpenLibrary system.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Solr indexing",
+        "lists",
+        "catalog metadata"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/updater/work.py",
+      "responsibility": "This file handles the updating and building of Solr documents for works in the OpenLibrary system.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Solr indexing",
+        "work metadata",
+        "author normalization"
+      ],
+      "symbol_count": 69,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/solr/utils.py",
+      "responsibility": "This file provides utility functions and classes for interacting with Solr, including configuration management and update requests.",
+      "layer": "utility",
+      "key_concepts": [
+        "Solr interaction",
+        "configuration management",
+        "update requests"
+      ],
+      "symbol_count": 11,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/__init__.py",
+      "responsibility": "Provides utility functions and classes for common operations like normalization, sorting, and version retrieval.",
+      "layer": "utility",
+      "key_concepts": [
+        "normalization",
+        "sorting",
+        "identifier extraction"
+      ],
+      "symbol_count": 11,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/async_utils.py",
+      "responsibility": "Provides utilities for running asynchronous code in a synchronous context.",
+      "layer": "utility",
+      "key_concepts": [
+        "asynchronous execution",
+        "synchronous context",
+        "concurrency management"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/compress.py",
+      "responsibility": "Provides utilities for compressing and decompressing data.",
+      "layer": "utility",
+      "key_concepts": [
+        "data compression",
+        "data decompression"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/dateutil.py",
+      "responsibility": "Provides utility functions for date manipulation and parsing.",
+      "layer": "utility",
+      "key_concepts": [
+        "date manipulation",
+        "date parsing",
+        "time calculation"
+      ],
+      "symbol_count": 10,
+      "imports_from_count": 6,
+      "imported_by_count": 1
+    },
+    {
+      "file_path": "openlibrary/utils/ddc.py",
+      "responsibility": "This file provides utility functions for normalizing and sorting Dewey Decimal Classification (DDC) numbers.",
+      "layer": "utility",
+      "key_concepts": [
+        "Dewey Decimal Classification",
+        "normalization",
+        "sorting"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/decorators.py",
+      "responsibility": "This file provides decorator utilities for handling authorization logic in the codebase.",
+      "layer": "utility",
+      "key_concepts": [
+        "authorization",
+        "user access control",
+        "decorators"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/form.py",
+      "responsibility": "Provides utility classes and functions for form handling and validation.",
+      "layer": "utility",
+      "key_concepts": [
+        "form handling",
+        "input validation",
+        "user input processing"
+      ],
+      "symbol_count": 23,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/isbn.py",
+      "responsibility": "This file provides utility functions for validating, converting, and normalizing ISBN numbers.",
+      "layer": "utility",
+      "key_concepts": [
+        "ISBN validation",
+        "ISBN conversion",
+        "ISBN normalization"
+      ],
+      "symbol_count": 10,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/lcc.py",
+      "responsibility": "This file provides utility functions for processing and normalizing Library of Congress Classification (LCC) codes.",
+      "layer": "utility",
+      "key_concepts": [
+        "Library of Congress Classification",
+        "code normalization",
+        "sorting"
+      ],
+      "symbol_count": 7,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/lccn.py",
+      "responsibility": "Provides a utility function to normalize Library of Congress Control Numbers (LCCNs).",
+      "layer": "utility",
+      "key_concepts": [
+        "LCCN normalization",
+        "library cataloging",
+        "identifier formatting"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/olcompress.py",
+      "responsibility": "Provides a specialized compressor utility for OpenLibrary data.",
+      "layer": "utility",
+      "key_concepts": [
+        "data compression",
+        "file handling"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/olmemcache.py",
+      "responsibility": "Provides a wrapper around memcache for caching operations with compression support.",
+      "layer": "utility",
+      "key_concepts": [
+        "caching",
+        "compression",
+        "performance optimization"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 2,
+      "imported_by_count": 1
+    },
+    {
+      "file_path": "openlibrary/utils/open_syllabus_project.py",
+      "responsibility": "This file provides utility functions for managing and processing Open Syllabus Project data dumps.",
+      "layer": "utility",
+      "key_concepts": [
+        "Open Syllabus Project",
+        "data dumps",
+        "database management"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/processors.py",
+      "responsibility": "This file implements rate limiting logic to control the frequency of certain operations.",
+      "layer": "utility",
+      "key_concepts": [
+        "rate limiting",
+        "operation frequency control",
+        "request throttling"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/request_context.py",
+      "responsibility": "This file manages the request context for both legacy web.py and FastAPI frameworks.",
+      "layer": "utility",
+      "key_concepts": [
+        "request context management",
+        "web framework integration",
+        "HTTP request handling"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/retry.py",
+      "responsibility": "Provides classes for implementing retry logic with configurable strategies.",
+      "layer": "utility",
+      "key_concepts": [
+        "retry logic",
+        "error handling",
+        "execution strategy"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/schema.py",
+      "responsibility": "Provides utilities for registering and retrieving data types and adapters for different SQL databases.",
+      "layer": "utility",
+      "key_concepts": [
+        "data type registration",
+        "SQL database adapters",
+        "constant management"
+      ],
+      "symbol_count": 38,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/sentry.py",
+      "responsibility": "This file integrates Sentry error tracking with the web application, providing utilities for capturing exceptions and adding context.",
+      "layer": "utility",
+      "key_concepts": [
+        "error tracking",
+        "web application context",
+        "exception handling"
+      ],
+      "symbol_count": 18,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/shutdown.py",
+      "responsibility": "This file sets up and handles graceful shutdown procedures for the application.",
+      "layer": "utility",
+      "key_concepts": [
+        "graceful shutdown",
+        "signal handling",
+        "application lifecycle"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/utils/solr.py",
+      "responsibility": "Provides utility functions and a class for interacting with Solr, including escaping values for queries.",
+      "layer": "utility",
+      "key_concepts": [
+        "Solr interaction",
+        "query escaping",
+        "search indexing"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/views/loanstats.py",
+      "responsibility": "This file handles HTTP requests related to loan statistics and reading logs, providing summaries, leaderboards, and cached statistics.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "loan statistics",
+        "reading logs",
+        "leaderboards"
+      ],
+      "symbol_count": 13,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "openlibrary/views/showmarc.py",
+      "responsibility": "This file handles HTTP requests to display MARC records and related book information from various sources.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "MARC records",
+        "book information",
+        "external data sources"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/_init_path.py",
+      "responsibility": "Sets up the system path for script execution.",
+      "layer": "script",
+      "key_concepts": [
+        "system path configuration",
+        "script execution environment"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 3,
+      "imported_by_count": 8
+    },
+    {
+      "file_path": "scripts/affiliate_server.py",
+      "responsibility": "This file implements a script for processing and prioritizing book data from affiliate sources like Google Books and Amazon.",
+      "layer": "script",
+      "key_concepts": [
+        "book data processing",
+        "affiliate integration",
+        "data prioritization"
+      ],
+      "symbol_count": 37,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/bulk_load_ia_query.py",
+      "responsibility": "This script handles the bulk loading of Internet Archive identifiers into the system.",
+      "layer": "script",
+      "key_concepts": [
+        "bulk loading",
+        "Internet Archive",
+        "identifier management"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/copydocs.py",
+      "responsibility": "This file provides functionality to copy and manage document references and versions from various sources.",
+      "layer": "script",
+      "key_concepts": [
+        "document management",
+        "version control",
+        "data copying"
+      ],
+      "symbol_count": 22,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/cron_wrapper.py",
+      "responsibility": "This file provides a wrapper for running and monitoring cron jobs with error reporting.",
+      "layer": "script",
+      "key_concepts": [
+        "cron jobs",
+        "error monitoring",
+        "job execution"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/delete_import_items.py",
+      "responsibility": "This file defines a script for deleting import items from the system.",
+      "layer": "script",
+      "key_concepts": [
+        "import management",
+        "data cleanup",
+        "job execution"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/detect_missing_i18n.py",
+      "responsibility": "This file is a script for detecting missing internationalization (i18n) elements in HTML files.",
+      "layer": "script",
+      "key_concepts": [
+        "internationalization",
+        "HTML analysis",
+        "error detection"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/expire_accounts.py",
+      "responsibility": "This script deletes expired account links from the database.",
+      "layer": "script",
+      "key_concepts": [
+        "account management",
+        "expiration",
+        "database cleanup"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/fake_loan_server.py",
+      "responsibility": "This file simulates a loan server for testing purposes.",
+      "layer": "script",
+      "key_concepts": [
+        "loan simulation",
+        "testing",
+        "library loans"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/get_web_error.py",
+      "responsibility": "This script retrieves and displays web error information.",
+      "layer": "script",
+      "key_concepts": [
+        "web error handling",
+        "error reporting"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/gh_scripts/issue_comment_bot.py",
+      "responsibility": "This file implements a script for managing GitHub issue comments and labels.",
+      "layer": "script",
+      "key_concepts": [
+        "GitHub issue management",
+        "comment automation",
+        "labeling"
+      ],
+      "symbol_count": 15,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/import_open_textbook_library.py",
+      "responsibility": "This script imports data from the Open Textbook Library into the OpenLibrary system.",
+      "layer": "script",
+      "key_concepts": [
+        "data import",
+        "open textbooks",
+        "batch processing"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/import_pressbooks.py",
+      "responsibility": "This script converts and imports Pressbooks data into the OpenLibrary system.",
+      "layer": "script",
+      "key_concepts": [
+        "data import",
+        "Pressbooks",
+        "OpenLibrary integration"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/import_standard_ebooks.py",
+      "responsibility": "This file handles the import of standard ebooks into the system.",
+      "layer": "script",
+      "key_concepts": [
+        "ebook import",
+        "data mapping",
+        "batch processing"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/lc_marc_update.py",
+      "responsibility": "This file is a script for updating MARC records using FTP and HTTP connections.",
+      "layer": "script",
+      "key_concepts": [
+        "MARC records",
+        "FTP transfer",
+        "library catalog updates"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/mail_bad_author_query.py",
+      "responsibility": "This script sends email notifications about problematic author queries.",
+      "layer": "script",
+      "key_concepts": [
+        "author queries",
+        "email notifications",
+        "error reporting"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/manage-imports.py",
+      "responsibility": "This file manages the import process for various items into the OpenLibrary system.",
+      "layer": "script",
+      "key_concepts": [
+        "import process",
+        "OpenLibrary system",
+        "batch processing"
+      ],
+      "symbol_count": 10,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/migrate_db.py",
+      "responsibility": "This file handles the migration of the database schema to newer versions.",
+      "layer": "script",
+      "key_concepts": [
+        "database migration",
+        "schema versioning",
+        "upgrade process"
+      ],
+      "symbol_count": 10,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/migrations/anonymous_store_remediation.py",
+      "responsibility": "This script performs a migration to remediate anonymous store data by checking account activity and updating store keys.",
+      "layer": "script",
+      "key_concepts": [
+        "data migration",
+        "account activity",
+        "store key remediation"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/migrations/delete_merge_debug.py",
+      "responsibility": "This file is a script for deleting and merging debug records in the database.",
+      "layer": "script",
+      "key_concepts": [
+        "database maintenance",
+        "record deletion",
+        "debugging"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/migrations/fix_unicode_html_entities.py",
+      "responsibility": "This file is a script for migrating and fixing unicode HTML entities in data dumps.",
+      "layer": "script",
+      "key_concepts": [
+        "data migration",
+        "unicode handling",
+        "HTML entity correction"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/migrations/update_legacy_preferences.py",
+      "responsibility": "This file is a script for migrating and updating legacy user preferences in the database.",
+      "layer": "script",
+      "key_concepts": [
+        "user preferences",
+        "data migration",
+        "database update"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/migrations/write_prefs_to_store.py",
+      "responsibility": "This script migrates user preferences data to a new storage system.",
+      "layer": "script",
+      "key_concepts": [
+        "user preferences",
+        "data migration",
+        "storage system"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/monitoring/fail2ban_monitor.py",
+      "responsibility": "Monitors and retrieves fail2ban counts for security analysis.",
+      "layer": "script",
+      "key_concepts": [
+        "security monitoring",
+        "fail2ban",
+        "system logs"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/monitoring/monitor.py",
+      "responsibility": "This file implements monitoring functions for logging worker status, analyzing nginx logs, and tracking fail2ban activity.",
+      "layer": "script",
+      "key_concepts": [
+        "system monitoring",
+        "log analysis",
+        "security tracking"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/monitoring/solr_logs_monitor.py",
+      "responsibility": "Monitors and processes Solr logs to extract and analyze request data.",
+      "layer": "script",
+      "key_concepts": [
+        "log monitoring",
+        "request analysis",
+        "Solr"
+      ],
+      "symbol_count": 13,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/monitoring/solr_updater_monitor.py",
+      "responsibility": "Monitors and reports the status of Solr updates.",
+      "layer": "script",
+      "key_concepts": [
+        "Solr updates",
+        "monitoring",
+        "reporting"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/monitoring/utils.py",
+      "responsibility": "Provides utility functions and classes for monitoring and submitting events to Graphite.",
+      "layer": "utility",
+      "key_concepts": [
+        "monitoring",
+        "event submission",
+        "system utilities"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/obfi/hide.py",
+      "responsibility": "This file provides functionality to obfuscate IP addresses using hashing techniques.",
+      "layer": "utility",
+      "key_concepts": [
+        "IP obfuscation",
+        "hashing",
+        "privacy"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/obfi/mktable.py",
+      "responsibility": "This file is a script for processing input data and obscuring IP addresses using hashing.",
+      "layer": "script",
+      "key_concepts": [
+        "data processing",
+        "IP address obscuring",
+        "hashing"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 9,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/obfi/reveal.py",
+      "responsibility": "This file provides functionality to reveal and process real IP addresses from obfuscated data.",
+      "layer": "script",
+      "key_concepts": [
+        "IP address processing",
+        "data obfuscation",
+        "data revelation"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/obfi/shownames.py",
+      "responsibility": "This file is a script for adding and displaying names using regular expressions.",
+      "layer": "script",
+      "key_concepts": [
+        "name processing",
+        "regular expressions",
+        "command-line execution"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/oclc_to_marc.py",
+      "responsibility": "This file is a script for retrieving MARC records from OCLC using URLs.",
+      "layer": "script",
+      "key_concepts": [
+        "MARC records",
+        "OCLC",
+        "data retrieval"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/oldump.py",
+      "responsibility": "This file is a script for dumping data from the OpenLibrary system.",
+      "layer": "script",
+      "key_concepts": [
+        "data export",
+        "logging",
+        "system configuration"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 7,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/open_syllabus_project_parser.py",
+      "responsibility": "This file serves as a script to parse data for the Open Syllabus Project.",
+      "layer": "script",
+      "key_concepts": [
+        "data parsing",
+        "Open Syllabus Project",
+        "database generation"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 0,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/partner_batch_imports.py",
+      "responsibility": "This file handles the batch import of bibliographic data from partner sources into the OpenLibrary system.",
+      "layer": "script",
+      "key_concepts": [
+        "bibliographic data import",
+        "data quality assessment",
+        "partner integration"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/pr_slack_digest.py",
+      "responsibility": "This file sends a digest message to Slack.",
+      "layer": "script",
+      "key_concepts": [
+        "communication",
+        "notification",
+        "Slack integration"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/promise_batch_imports.py",
+      "responsibility": "This file handles the batch import of book records from a promise source into OpenLibrary.",
+      "layer": "script",
+      "key_concepts": [
+        "batch import",
+        "book records",
+        "data staging"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/providers/import_wikisource.py",
+      "responsibility": "This file imports metadata from Wikisource and updates book records accordingly.",
+      "layer": "script",
+      "key_concepts": [
+        "metadata import",
+        "Wikisource integration",
+        "book records"
+      ],
+      "symbol_count": 31,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/providers/isbndb.py",
+      "responsibility": "This file handles the batch import of bibliographic data from the ISBNdb provider.",
+      "layer": "script",
+      "key_concepts": [
+        "bibliographic data import",
+        "ISBNdb integration",
+        "data processing"
+      ],
+      "symbol_count": 11,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/pull-templates.py",
+      "responsibility": "This script pulls and processes template data from the OpenLibrary API.",
+      "layer": "script",
+      "key_concepts": [
+        "template data",
+        "OpenLibrary API",
+        "data processing"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/sitemaps/sitemap.py",
+      "responsibility": "This file generates and writes sitemaps and site indexes for the website.",
+      "layer": "script",
+      "key_concepts": [
+        "sitemap generation",
+        "site indexing",
+        "web crawling"
+      ],
+      "symbol_count": 13,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_builder/setup.py",
+      "responsibility": "This file sets up the build configuration for the Solr builder script using setuptools.",
+      "layer": "script",
+      "key_concepts": [
+        "build configuration",
+        "Solr integration",
+        "setup process"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 3,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_builder/solr_builder/fn_to_cli.py",
+      "responsibility": "Converts function definitions into command-line interface (CLI) commands for Solr builder scripts.",
+      "layer": "script",
+      "key_concepts": [
+        "CLI generation",
+        "function parsing",
+        "argument handling"
+      ],
+      "symbol_count": 8,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_builder/solr_builder/index_subjects.py",
+      "responsibility": "This file builds and indexes subject documents for Solr.",
+      "layer": "script",
+      "key_concepts": [
+        "subject indexing",
+        "Solr integration",
+        "catalog metadata"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 4,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_builder/solr_builder/solr_builder.py",
+      "responsibility": "This file provides functions and classes for querying and caching data from a local PostgreSQL database to build Solr indexes.",
+      "layer": "data_access",
+      "key_concepts": [
+        "Solr indexing",
+        "data caching",
+        "database querying"
+      ],
+      "symbol_count": 24,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_dump_xisbn.py",
+      "responsibility": "This script performs a Solr data dump using xISBN service for ISBN resolution.",
+      "layer": "script",
+      "key_concepts": [
+        "Solr data dump",
+        "ISBN resolution",
+        "xISBN service"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 5,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_updater/solr_updater.py",
+      "responsibility": "This file processes and updates Solr index based on log files.",
+      "layer": "script",
+      "key_concepts": [
+        "Solr indexing",
+        "log processing",
+        "data synchronization"
+      ],
+      "symbol_count": 9,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_updater/trending_updater.py",
+      "responsibility": "This file updates trending data in Solr using scheduled jobs.",
+      "layer": "script",
+      "key_concepts": [
+        "trending data",
+        "Solr indexing",
+        "scheduled jobs"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 6,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_updater/trending_updater_daily.py",
+      "responsibility": "This script calculates and updates daily trending scores for works in Solr.",
+      "layer": "script",
+      "key_concepts": [
+        "trending scores",
+        "Solr indexing",
+        "works"
+      ],
+      "symbol_count": 3,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_updater/trending_updater_hourly.py",
+      "responsibility": "This file updates Solr with trending data on an hourly basis.",
+      "layer": "script",
+      "key_concepts": [
+        "trending data",
+        "Solr indexing",
+        "hourly updates"
+      ],
+      "symbol_count": 12,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/solr_updater/trending_updater_init.py",
+      "responsibility": "Initializes and runs the trending updater for Solr indexing on a scheduled basis.",
+      "layer": "script",
+      "key_concepts": [
+        "Solr indexing",
+        "trending updates",
+        "scheduled execution"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/store_counts.py",
+      "responsibility": "This file is a script for storing statistical counts in the OpenLibrary system.",
+      "layer": "script",
+      "key_concepts": [
+        "statistical counts",
+        "data storage",
+        "OpenLibrary system"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/update_stale_ocaid_references.py",
+      "responsibility": "This script updates and disassociates stale OCAID references in the OpenLibrary database.",
+      "layer": "script",
+      "key_concepts": [
+        "OCAID management",
+        "database updates",
+        "data integrity"
+      ],
+      "symbol_count": 4,
+      "imports_from_count": 10,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/update_stale_work_references.py",
+      "responsibility": "This script updates stale references to works in the OpenLibrary database.",
+      "layer": "script",
+      "key_concepts": [
+        "work references",
+        "database updates",
+        "data consistency"
+      ],
+      "symbol_count": 1,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/utils/graceful_shutdown.py",
+      "responsibility": "This file provides utilities for handling graceful shutdowns of scripts using signal handlers.",
+      "layer": "utility",
+      "key_concepts": [
+        "graceful shutdown",
+        "signal handling",
+        "script termination"
+      ],
+      "symbol_count": 2,
+      "imports_from_count": 1,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "scripts/utils/scheduler.py",
+      "responsibility": "This file provides utilities for scheduling and managing asynchronous jobs using APScheduler.",
+      "layer": "utility",
+      "key_concepts": [
+        "asynchronous job scheduling",
+        "task management",
+        "cron scheduling"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 8,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "setup.py",
+      "responsibility": "This file configures the package setup for installation.",
+      "layer": "config",
+      "key_concepts": [
+        "package configuration",
+        "installation",
+        "build process"
+      ],
+      "symbol_count": 0,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "tests/integration/test_fastapi_auth.py",
+      "responsibility": "This file tests the authentication and session management endpoints of the FastAPI application.",
+      "layer": "http_handler",
+      "key_concepts": [
+        "authentication",
+        "session management",
+        "API testing"
+      ],
+      "symbol_count": 6,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    },
+    {
+      "file_path": "tests/test_docker_compose.py",
+      "responsibility": "This file contains unit tests for validating the configuration and consistency of Docker Compose services.",
+      "layer": "utility",
+      "key_concepts": [
+        "Docker Compose configuration",
+        "service validation",
+        "environment consistency"
+      ],
+      "symbol_count": 5,
+      "imports_from_count": 2,
+      "imported_by_count": 0
+    }
+  ]
+}

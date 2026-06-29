@@ -184,6 +184,10 @@ class IssueLocalizer:
                     len(self._soft_index),
                 )
 
+        # ── Module index (architecture-aware layer) ───────────────
+        from openlibrary_kg.downstream.module_index import ModuleIndex
+        self.module_index = ModuleIndex()
+
         # ── Semantic entry module ─────────────────────────────────
         from openlibrary_kg.downstream.query_rewriter import QueryRewriter
         self.query_rewriter = QueryRewriter(
@@ -285,6 +289,12 @@ class IssueLocalizer:
         # ── Step 3.5: Soft-index boost ────────────────────────────
         if self._soft_index:
             ranked = self._apply_soft_index_boost(
+                issue_text, ranked, top_k,
+            )
+
+        # ── Step 3.6: Architecture-aware module boost ─────────────
+        if self.module_index.enabled:
+            ranked = self._apply_architecture_boost(
                 issue_text, ranked, top_k,
             )
 
@@ -408,6 +418,50 @@ class IssueLocalizer:
                 entry["_soft_boost"] = boost_map[fp]
 
         # Re-sort
+        ranked.sort(key=lambda e: e.get("score", 0.0), reverse=True)
+        return ranked[:top_k]
+
+    # ==================================================================
+    # Architecture-aware module boost
+    # ==================================================================
+
+    def _apply_architecture_boost(
+        self,
+        issue_text: str,
+        ranked: list[dict[str, Any]],
+        top_k: int,
+    ) -> list[dict[str, Any]]:
+        """Boost files whose module responsibility matches the issue content."""
+        tokens = set(t.lower() for t in _TOKEN_RE.findall(issue_text))
+
+        for entry in ranked:
+            fp = entry.get("file_path", "")
+            # Normalize absolute path -> relative for module_card lookup
+            fp_norm = fp.replace("\\", "/")
+            for prefix in ("openlibrary/openlibrary/", "Openlibrary/openlibrary/"):
+                if prefix in fp_norm:
+                    fp_norm = fp_norm.split(prefix, 1)[1]
+
+            kcs = self.module_index.get_key_concepts(fp_norm)
+            if not kcs and fp_norm != fp:
+                kcs = self.module_index.get_key_concepts(fp)
+
+            if not kcs:
+                continue
+
+            boost = 0.0
+            for kc in kcs:
+                for token in tokens:
+                    if token in kc.lower():
+                        boost += 0.05
+                        break
+
+            if boost > 0:
+                boost = min(boost, 0.20)
+                entry["score"] = entry.get("score", 0.0) * (1.0 + boost)
+                entry["_arch_boost"] = round(boost, 3)
+                entry["_arch_layer"] = self.module_index.get_layer(fp_norm)
+
         ranked.sort(key=lambda e: e.get("score", 0.0), reverse=True)
         return ranked[:top_k]
 

@@ -21,6 +21,7 @@ output/*
 !output/swebench_ground_truth.json
 !output/soft_index.json
 !output/llm_baseline_eval.json
+!output/module_cards.json
 
 # === IDE ===
 .vscode/
