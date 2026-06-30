@@ -76,6 +76,7 @@ docs/                # 迭代记录与变更文档
 - [docs/ITERATION_7.md](docs/ITERATION_7.md) — 迭代七：软索引 + 策略路由 + GPT-4o baseline
 - [docs/ITERATION_8.md](docs/ITERATION_8.md) — 迭代八：Agent-native查询 + LLM-KG Oracle
 - [docs/ITERATION_9.md](docs/ITERATION_9.md) — 迭代九：复合概念保留 — Recall 84.6%→87.9%
+- [docs/ITERATION_10.md](docs/ITERATION_10.md) — 迭代十：模块架构卡 + Track B 恢复 — 混合 MRR 0.760 超 BM25
 - [docs/CURRENT_STATE.md](docs/CURRENT_STATE.md) — 当前状态
 - [docs/PROJECT_ANALYSIS.md](docs/PROJECT_ANALYSIS.md) — 项目分析
 

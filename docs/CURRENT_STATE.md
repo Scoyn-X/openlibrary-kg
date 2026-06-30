@@ -19,6 +19,7 @@
 | **迭代七** | 软索引 + 策略路由 + LLM-native baseline | Recall 84.6%, GPT-4o=85.7%, BM25=92.3% |
 | **迭代八** | Agent-native查询接口 + LLM-KG Oracle | KG 升级为 Agent 知识基础设施 |
 | **迭代九** | 复合概念保留 — 修复 HARD_BLOCKLIST 过度拆分 | **Recall 84.6%→87.9%（+3.3pp）** |
+| **迭代十** | 模块架构卡 + Track B 恢复 + 前沿探索报告 | Recall 87.9%, 混合 MRR 0.760 超 BM25 |
 
 ---。
 
