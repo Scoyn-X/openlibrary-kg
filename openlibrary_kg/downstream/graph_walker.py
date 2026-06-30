@@ -81,7 +81,7 @@ class GraphWalker:
         kg: dict[str, Any],
         max_hops: int = 3,
         cooccurrence_decay: float = 0.5,
-        synonym_track_b_factor: float = 0.5,
+        synonym_track_b_factor: float = 0.2,
         callgraph_decay: float = 0.2,
         min_path_weight: float = 0.01,
         high_freq_file_ratio: float = 0.30,

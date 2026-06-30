@@ -117,7 +117,7 @@ class IssueLocalizer:
         kg_path: str | Path = "output/phase_6_knowledge_graph.json",
         kg_query: Any | None = None,                  # pre-built KGQuery (optional)
         soft_index_path: str | None = "output/soft_index.json",
-        synonym_track_b_factor: float = 0.5,
+        synonym_track_b_factor: float = 0.2,
         cooccurrence_decay: float = 0.5,
         top_functions_per_file: int = 5,
         max_clusters_for_disambiguation: int = 30,
