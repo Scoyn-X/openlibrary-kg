@@ -2,6 +2,8 @@
 
 从 Python 源代码自动构建知识图谱，实现 issue 语义导航与文件定位。
 
+> 前沿探索课题报告：[docs/FRONTIER_REPORT.md](docs/FRONTIER_REPORT.md)
+
 ## 概述
 
 本课题从 [OpenLibrary](https://github.com/internetarchive/openlibrary) Python 代码仓库中提取领域概念、梳理语义关系，构建知识图谱（KG），并在此基础上实现 issue 定位——给定一条 bug report，自动推荐最可能需要修改的源代码文件。
@@ -9,19 +11,18 @@
 ### 核心 Pipeline
 
 ```
-Phase 1: AST 标识符提取 → Phase 2: LLM 语义定义 → 
-Phase 3: 同义词双轨检测 → Phase 4: 一词多义聚类 → 
-Phase 5: 共现子域分桶 → Phase 6: KG 装配 → 
-Phase 7: Neo4j 图数据库 → Phase 8: 语义导航定位
+AST 标识符提取 → LLM 语义定义 → 同义词双轨检测 → 一词多义聚类 → 
+共现子域分桶 → KG 装配 → Neo4j 图数据库 → 语义导航定位
 ```
 
 ### 最终结果
 
 | 方法 | File Recall@10 | File MRR |
 |------|---------------|----------|
-| KG-walk | **84.6%** | 0.552 |
+| KG-walk | **87.9%** | 0.543 |
 | BM25（基线） | 92.3% | 0.758 |
-| KG + BM25 混合 | **92.3%**（追平基线） | 0.726 |
+| GPT-4o | 85.7% | 0.699 |
+| KG + BM25 混合 | **92.3%** | **0.760**（超越纯BM25） |
 
 ## 快速开始
 
